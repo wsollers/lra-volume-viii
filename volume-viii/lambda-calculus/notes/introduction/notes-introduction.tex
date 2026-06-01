@@ -1,0 +1,103 @@
+% =========================================================
+% Section: Introduction to Lambda Calculus
+% Chapter: Lambda Calculus — Volume I
+% =========================================================
+
+\begin{tcolorbox}[colback=gray!6, colframe=gray!40, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Section Toolkit --- Quick Reference}},
+  fonttitle=\small\bfseries]
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept} & \textbf{One-line summary} \\
+\midrule
+$\lambda$-term
+  & Variable $x$, abstraction $\lambda x.M$, application $MN$ \\
+$\alpha$-equivalence
+  & $\lambda x.M =_\alpha \lambda y.M[y/x]$ when $y$ fresh \\
+$\beta$-reduction
+  & $(\lambda x.M)N \to_\beta M[N/x]$ \\
+Normal form
+  & Term with no $\beta$-redex; may not exist (non-termination) \\
+Church boolean \textbf{T}
+  & $\lambda x.\lambda y.x$ \\
+Church boolean \textbf{F}
+  & $\lambda x.\lambda y.y$ \\
+Church numeral $\overline{n}$
+  & $\lambda f.\lambda x.f^n(x)$ ($f$ applied $n$ times to $x$) \\
+Type $\tau \to \sigma$
+  & Function type: input of type $\tau$, output of type $\sigma$ \\
+Typing judgment
+  & $\Gamma\vdash M : \tau$ reads ``$M$ has type $\tau$ in context $\Gamma$'' \\
+Curry--Howard
+  & Propositions are types; proofs are terms; $A\to B$ is implication \\
+\bottomrule
+\end{tabular}
+\end{tcolorbox}
+
+% ---------------------------------------------------------
+% Part I: Untyped Lambda Calculus
+% ---------------------------------------------------------
+% =========================================================
+% References --- Background Prerequisites
+% =========================================================
+
+
+
+
+\subsection*{Untyped Lambda Calculus}
+\begin{tcolorbox}[title={Background References}]
+\begin{itemize}
+  \item \textbf{First-order logic:} Enderton~[1972], Barwise~[1977a].
+  \item \textbf{General topology:} Kelly~[1955].
+  \item \textbf{Set theory:} Halmos~[1960], van Dalen et al.~[1978].
+  \item \textbf{Recursion theory:} Rogers~[1967].
+  \item \textbf{Category theory:} Arbib and Manes~[1975], MacLane~[1972].
+\end{itemize}
+\end{tcolorbox}
+
+
+
+
+% =========================================================
+% Definition --- Lambda Terms
+% =========================================================
+
+\begin{tcolorbox}[title={Definition --- Lambda Terms}]
+\begin{definition}[Lambda Terms]
+The set $\Lambda$ of $\lambda$-terms is defined inductively as follows:
+
+\begin{enumerate}
+    \item Every variable $x$ is a $\lambda$-term.
+    \item If $M$ is a $\lambda$-term and $x$ is a variable, then
+    \[
+    \lambda x.\,M
+    \]
+    is a $\lambda$-term.
+    \item If $M$ and $N$ are $\lambda$-terms, then
+    \[
+    MN
+    \]
+    is a $\lambda$-term.
+\end{enumerate}
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Interpretation]
+The $\lambda$-terms are the smallest set closed under three constructions:
+variables, abstraction (function formation), and application (function
+evaluation). This inductive definition plays the same role as recursive
+definitions in analysis or algebra: every $\lambda$-term is built from
+variables by finitely many applications of abstraction and application.
+\end{remark*}
+
+\begin{remark*}[Structural View]
+Every $\lambda$-term has a tree structure:
+\begin{itemize}
+    \item variables are leaves,
+    \item abstractions $\lambda x.\,M$ are unary nodes,
+    \item applications $MN$ are binary nodes.
+\end{itemize}
+Thus $\Lambda$ is a freely generated syntactic algebra.
+\end{remark*}
