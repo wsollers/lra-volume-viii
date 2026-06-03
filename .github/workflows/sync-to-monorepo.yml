@@ -33,6 +33,11 @@ jobs:
         run: |
           rsync -av --delete --dry-run source/volume-viii/ monorepo/volume-viii/
 
+      - name: Validate leaf proof stubs
+        run: |
+          cd source
+          python scripts/validate_leaf_proofs.py --root . --strict
+
       - name: Sync volume-viii into monorepo
         if: ${{ github.event_name == 'push' || github.event.inputs.dry_run == 'false' }}
         run: |
