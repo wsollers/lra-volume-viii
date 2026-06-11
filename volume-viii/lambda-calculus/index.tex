@@ -1,128 +1,15 @@
 % =========================================================
-% Volume I — Lambda Calculus
+% Chapter: Lambda Calculus
 % =========================================================
 \chapter{Lambda Calculus}
+\label{chap:lambda-calculus}
 
 \breadcrumb{lambda-calculus}{Type Theory}{Lambda Calculus}{Algebras of Sets}
 
-\vspace{0.5em}
-
-\begin{tcolorbox}[
-  colback=blue!4,
-  colframe=blue!30,
-  arc=2pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  title={\small\textbf{Chapter Overview}},
-  fonttitle=\small\bfseries
-]
-\small
-Lambda calculus ($\lambda$-calculus) is a formal system for expressing
-computation through function abstraction and application.
-Introduced by Alonzo Church (1936) to formalise computability,
-it is the theoretical foundation of functional programming
-and is equivalent in power to Turing machines.
-
-\medskip
-\textbf{Why it belongs here:} Lambda calculus sits at the intersection
-of logic, set theory, and computation.
-The Curry--Howard correspondence connects it directly to the
-predicate logic and type theory in this volume:
-propositions are types, proofs are programs, and
-implication corresponds to function type.
-
-\medskip
-\textbf{Primary source:} Barendregt \& Barendsen,
-\textit{Introduction to Lambda Calculus} (free PDF).
-Secondary: Rojas, \textit{A Tutorial Introduction to the Lambda Calculus}.
-Bridge to types: Pierce, \textit{Types and Programming Languages} Ch.\ 5, 8, 9.
-\end{tcolorbox}
-
-\vspace{0.5em}
-
-\begin{tcolorbox}[
-  colback=amber!6,
-  colframe=amber!40,
-  arc=2pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  title={\small\textbf{Planned Content}},
-  fonttitle=\small\bfseries
-]
-\small
-\begin{enumerate}
-  \item \textbf{Syntax} --- terms, variables, abstraction $\lambda x.M$,
-        application $MN$, free and bound variables
-  \item \textbf{Reduction} --- $\alpha$-conversion, $\beta$-reduction,
-        $\eta$-reduction, normal forms
-  \item \textbf{Church Encodings} --- booleans, natural numbers (Church numerals),
-        pairs, lists
-  \item \textbf{Fixed Points} --- the Y-combinator, recursive functions
-  \item \textbf{Computability} --- $\lambda$-definability, equivalence with
-        Turing machines, undecidability of $\beta$-equality
-  \item \textbf{Typed Lambda Calculus} --- simple types, type inference,
-        Curry--Howard correspondence
-\end{enumerate}
-\end{tcolorbox}
-
-% ---- Notes ----
-\section{Motivation: Functions as Computation}
-\textit{To be populated.}
-
-\section{Lambda Terms}
 \input{volume-viii/lambda-calculus/notes/index}
 
-\section{Variables, Abstraction, and Application}
-\textit{To be populated.}
+\section*{Proofs}
+\LRAProofsInput{volume-viii/lambda-calculus/proofs/index}
 
-\section{Free and Bound Variables}
-\textit{To be populated.}
-
-\section{Substitution}
-\textit{To be populated.}
-
-\section{Alpha-Equivalence}
-\textit{To be populated.}
-
-\section{Beta-Reduction}
-\textit{To be populated.}
-
-\section{Eta-Reduction}
-\textit{To be populated.}
-
-\section{Reduction Strategies}
-\textit{To be populated.}
-
-\section{Normal Forms}
-\textit{To be populated.}
-
-\section{Church Booleans}
-\textit{To be populated.}
-
-\section{Church Numerals}
-\textit{To be populated.}
-
-\section{Pairs and Lists}
-\textit{To be populated.}
-
-\section{Fixed Points and Recursion}
-\textit{To be populated.}
-
-\section{The Y-Combinator}
-\textit{To be populated.}
-
-\section{Lambda-Definable Functions}
-\textit{To be populated.}
-
-\section{Untyped Lambda Calculus and Computability}
-\textit{To be populated.}
-
-\section{Simply Typed Lambda Calculus}
-\textit{To be populated.}
-
-\section{Strong Normalization}
-\textit{To be populated.}
-
-\section{Curry--Howard Connection}
-\textit{To be populated.}
-
-\section{Capstone: Encoding Arithmetic in Lambda Calculus}
-\textit{To be populated.}
+\section*{Capstone}
+\LRAExercisesInput{volume-viii/lambda-calculus/proofs/exercises/index}

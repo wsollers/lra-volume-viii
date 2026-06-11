@@ -7,25 +7,6 @@
 %  TOOLKIT — L-Structures Quick Reference
 % ──────────────────────────────────────────────────────────────
 
-\begin{toolkitbox}{L-Structures Toolkit — Quick Reference}
-\small
-\begin{tabular}{l l l}
-\toprule
-\textbf{Concept} & \textbf{Symbol / Notation} & \textbf{Detail} \\
-\midrule
-First-order language    & $\mathcal{L}$                          & \hyperref[def:first-order-language]{↓} \\
-L-structure             & $\mathcal{M} = (M, \mathcal{L}^{\mathcal{M}})$ & \hyperref[def:l-structure]{↓} \\
-Domain / universe       & $|\mathcal{M}|$ or $M$                 & \hyperref[def:l-structure]{↓} \\
-Interpretation of $f$   & $f^{\mathcal{M}} : M^n \to M$          & \hyperref[def:l-structure]{↓} \\
-Interpretation of $R$   & $R^{\mathcal{M}} \subseteq M^n$        & \hyperref[def:l-structure]{↓} \\
-Interpretation of $c$   & $c^{\mathcal{M}} \in M$                & \hyperref[def:l-structure]{↓} \\
-Variable assignment     & $s : \mathrm{Var} \to M$               & \hyperref[def:variable-assignment]{↓} \\
-Term evaluation         & $s(t) \in M$                           & \hyperref[def:term-evaluation]{↓} \\
-Satisfaction            & $\mathcal{M} \models \varphi[s]$       & \hyperref[def:satisfaction]{↓} \\
-\bottomrule
-\end{tabular}
-\end{toolkitbox}
-
 \vspace{0.5em}
 
 % ──────────────────────────────────────────────────────────────
@@ -79,7 +60,7 @@ both defined inductively from $\mathcal{L}$; see
 
 % ── Examples of languages ─────────────────────────────────────
 
-\begin{example}[Standard examples of first-order languages]
+\begin{example*}[Standard examples of first-order languages]
 \begin{enumerate}
   \item \textbf{Language of ordered fields} $\mathcal{L}_{\mathrm{of}}$:
         function symbols $\{+, \cdot, -\}$ of arities $2, 2, 1$;
@@ -100,7 +81,7 @@ both defined inductively from $\mathcal{L}$; see
         no non-logical symbols at all. Structures are arbitrary
         non-empty sets.
 \end{enumerate}
-\end{example}
+\end{example*}
 
 % ──────────────────────────────────────────────────────────────
 %  §2  L-STRUCTURES
@@ -158,7 +139,7 @@ Marker uses $\mathcal{M}$; Enderton uses $\mathfrak{A}$.
 
 % ── Examples of L-structures ──────────────────────────────────
 
-\begin{example}[L-structures for familiar mathematical objects]
+\begin{example*}[L-structures for familiar mathematical objects]
 \begin{enumerate}
   \item $(\mathbb{R}, +^{\mathbb{R}}, \cdot^{\mathbb{R}}, -^{\mathbb{R}},
          <^{\mathbb{R}}, 0^{\mathbb{R}}, 1^{\mathbb{R}})$
@@ -176,7 +157,7 @@ Marker uses $\mathcal{M}$; Enderton uses $\mathfrak{A}$.
 \end{enumerate}
 Two different structures can share the same language — the language only
 fixes the \emph{type} of the interpretations, not their specific content.
-\end{example}
+\end{example*}
 
 % ──────────────────────────────────────────────────────────────
 %  §3  VARIABLE ASSIGNMENTS

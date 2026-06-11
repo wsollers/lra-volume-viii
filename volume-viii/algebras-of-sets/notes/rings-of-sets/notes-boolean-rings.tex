@@ -2,33 +2,6 @@
 % Section: Boolean Rings
 % ---------------------------------------------------------
 
-\begin{toolkitbox}{Toolkit --- Boolean Rings}
-\textbf{Concept family:} Boolean rings (Halmos--Givant §1) and their
-immediate consequences from the single idempotence axiom.
-
-\medskip
-\textbf{Atomic items in this section:}
-\begin{itemize}
-  \item Definition: Boolean Ring
-  \item Definition: Idempotent Element
-  \item Definition: Characteristic 2
-  \item Lemma: Self Additive Inverse ($p+p=0$)
-  \item Lemma: Self Negation ($-p=p$)
-\end{itemize}
-
-\medskip
-\textbf{Key predicate:}
-\[
-  \operatorname{BooleanRing}(R,+,\cdot,-,0,1)
-  \;\colonequiv\;
-  \operatorname{Ring}(R,+,\cdot,-,0,1)
-  \;\land\;
-  \operatorname{IdempotentRing}(R,\cdot).
-\]
-\textbf{Central theorem chain:} Idempotence $\Rightarrow$ Characteristic 2
-$\Rightarrow$ Self Negation ($-p=p$) $\Rightarrow$ Commutativity of $\cdot$.
-\end{toolkitbox}
-
 % ---------------------------------------------------------
 % Definition: Boolean Ring
 % Source: Halmos & Givant, Introduction to Boolean Algebras, §1
@@ -54,11 +27,6 @@ axioms~(1)--(3), (5), (6), (8)--(11), where axiom~(7)
 $($the additive inverse law$)$ is replaced by
 axiom~(10) $($characteristic~$2)$, which is derived as a theorem.
 Axiom numbering follows Halmos--Givant~\cite{HalmosGivant2009}.
-
-\smallskip
-\noindent
-\hyperref[prf:boolean-ring-characteristic-2]{\textit{Go to proof
-that every Boolean ring has characteristic~$2$.}}
 \end{definition}
 \end{definitionbox}
 
@@ -92,6 +60,11 @@ that every Boolean ring has characteristic~$2$.}}
 \;\lor\;
 \exists p \in R{:}\; p \cdot p \neq p.
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The failure modes are exactly the ways that one of the defining structural
+conditions can fail.
 \end{remark*}
 
 \begin{remark*}[Failure mode decomposition]
@@ -157,6 +130,7 @@ of addition and intersection plays the role of multiplication.
 % The Two-Element Boolean Ring 2
 % ---------------------------------------------------------
 
+\begin{example*}[The two-element Boolean ring]
 The simplest non-degenerate Boolean ring is the two-element ring
 $\mathbf{2} = \{0, 1\}$.
 Its addition and multiplication are given by the following tables.
@@ -182,12 +156,13 @@ integers restricted to $\{0, 1\}$.
 Every element of $\mathbf{2}$ satisfies $p + p = 0$ and
 $p \cdot p = p$, making $\mathbf{2}$ the canonical example against
 which both axioms~(10) and~(11) are verified.
+\end{example*}
 
 % ---------------------------------------------------------
 % Definition: Idempotent Element
 % ---------------------------------------------------------
 
-\begin{propositionbox}{Definition --- Idempotent Element}
+\begin{definitionbox}{Definition --- Idempotent Element}
 \begin{definition}[Idempotent Element]
 \label{def:idempotent-element}
 An element $p$ of a ring $R$ is called \textbf{idempotent} if
@@ -197,7 +172,7 @@ p \cdot p = p.
 A ring in which every element is idempotent is called an
 \textbf{idempotent ring}.
 \end{definition}
-\end{propositionbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -250,7 +225,7 @@ follow from idempotence alone, as the theorems below establish.
 % Definition: Characteristic 2
 % ---------------------------------------------------------
 
-\begin{propositionbox}{Definition --- Characteristic 2}
+\begin{definitionbox}{Definition --- Characteristic 2}
 \begin{definition}[Characteristic 2]
 \label{def:characteristic-2}
 A ring $R$ is said to have \textbf{characteristic~$2$} if
@@ -258,7 +233,7 @@ A ring $R$ is said to have \textbf{characteristic~$2$} if
 p + p = 0 \qquad \text{for all } p \in R. \tag{10}
 \]
 \end{definition}
-\end{propositionbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -317,8 +292,7 @@ p + p = 0 \qquad \text{for all } p \in R.
 
 \smallskip
 \noindent
-\hyperref[prf:boolean-ring-self-additive-inverse]{\textit{Go to proof.}}
-\hyperref[prf:self-additive-inverse]{Go to proof.}
+\hyperref[prf:self-additive-inverse]{\textit{Go to proof.}}
 \end{lemma}
 
 \begin{remark*}[Standard quantified statement]
