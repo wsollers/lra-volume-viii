@@ -7,10 +7,7 @@
 %  TOOLKIT — L-Structures Quick Reference
 % ──────────────────────────────────────────────────────────────
 
-\begin{tcolorbox}[colback=gray!6, colframe=gray!40, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{L-Structures Toolkit — Quick Reference}},
-  fonttitle=\small\bfseries]
+\begin{toolkitbox}{L-Structures Toolkit — Quick Reference}
 \small
 \begin{tabular}{l l l}
 \toprule
@@ -27,7 +24,7 @@ Term evaluation         & $s(t) \in M$                           & \hyperref[def
 Satisfaction            & $\mathcal{M} \models \varphi[s]$       & \hyperref[def:satisfaction]{↓} \\
 \bottomrule
 \end{tabular}
-\end{tcolorbox}
+\end{toolkitbox}
 
 \vspace{0.5em}
 
@@ -35,12 +32,9 @@ Satisfaction            & $\mathcal{M} \models \varphi[s]$       & \hyperref[def
 %  §1  FIRST-ORDER LANGUAGES
 % ──────────────────────────────────────────────────────────────
 
-\subsection{First-Order Languages}
+\subsection*{First-Order Languages}
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (First-Order Language $\mathcal{L}$)}},
-  fonttitle=\small\bfseries]
+\begin{propositionbox}{Definition (First-Order Language $\mathcal{L}$)}
 \label{def:first-order-language}
 A \textbf{first-order language} $\mathcal{L}$ consists of three (possibly
 empty) sets of non-logical symbols:
@@ -57,7 +51,7 @@ Together with the logical symbols common to all first-order languages
 (variables, connectives $\lnot, \land, \lor, \to, \leftrightarrow$,
 quantifiers $\forall, \exists$, equality $=$, parentheses), the triple
 $(\mathcal{F}, \mathcal{R}, \mathcal{C})$ determines $\mathcal{L}$.
-\end{tcolorbox}
+\end{propositionbox}
 
 \begin{remark*}[Fully quantified form]
 $\mathcal{L} = (\mathcal{F}, \mathcal{R}, \mathcal{C})$ where
@@ -112,12 +106,9 @@ both defined inductively from $\mathcal{L}$; see
 %  §2  L-STRUCTURES
 % ──────────────────────────────────────────────────────────────
 
-\subsubsection{L-Structures}
+\subsubsection*{L-Structures}
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition ($\mathcal{L}$-Structure)}},
-  fonttitle=\small\bfseries]
+\begin{propositionbox}{Definition ($\mathcal{L}$-Structure)}
 \label{def:l-structure}
 Let $\mathcal{L} = (\mathcal{F}, \mathcal{R}, \mathcal{C})$ be a
 first-order language.
@@ -134,7 +125,7 @@ An \textbf{$\mathcal{L}$-structure} $\mathcal{M}$ consists of:
 \end{enumerate}
 The superscript notation $f^{\mathcal{M}}, R^{\mathcal{M}}, c^{\mathcal{M}}$
 denotes the \textbf{interpretation} of each symbol in $\mathcal{M}$.
-\end{tcolorbox}
+\end{propositionbox}
 
 \begin{remark*}[Fully quantified form]
 $\mathcal{M}$ is an $\mathcal{L}$-structure iff
@@ -191,12 +182,9 @@ fixes the \emph{type} of the interpretations, not their specific content.
 %  §3  VARIABLE ASSIGNMENTS
 % ──────────────────────────────────────────────────────────────
 
-\subsubsection{Variable Assignments}
+\subsubsection*{Variable Assignments}
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Variable Assignment)}},
-  fonttitle=\small\bfseries]
+\begin{propositionbox}{Definition (Variable Assignment)}
 \label{def:variable-assignment}
 Let $\mathcal{M}$ be an $\mathcal{L}$-structure with domain $M$, and let
 $\mathrm{Var} = \{v_1, v_2, v_3, \ldots\}$ be a fixed countable set of
@@ -215,7 +203,7 @@ variables except $v_i$, where it returns $a$:
     s(v_j) & \text{if } j \neq i.
   \end{cases}
 \]
-\end{tcolorbox}
+\end{propositionbox}
 
 \begin{remark*}[Fully quantified form]
 $s : \mathrm{Var} \to M$, and
@@ -234,12 +222,9 @@ $a \in M$.
 %  §4  TERM EVALUATION
 % ──────────────────────────────────────────────────────────────
 
-\subsubsection{Term Evaluation}
+\subsubsection*{Term Evaluation}
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Term Evaluation)}},
-  fonttitle=\small\bfseries]
+\begin{propositionbox}{Definition (Term Evaluation)}
 \label{def:term-evaluation}
 Let $\mathcal{M}$ be an $\mathcal{L}$-structure and $s : \mathrm{Var} \to M$
 a variable assignment.
@@ -251,7 +236,7 @@ $s$ is defined inductively:
   \item If $t = f(t_1, \ldots, t_n)$ for an $n$-ary function symbol $f$,
         then $s(t) = f^{\mathcal{M}}(s(t_1), \ldots, s(t_n))$.
 \end{enumerate}
-\end{tcolorbox}
+\end{propositionbox}
 
 \begin{remark*}[Fully quantified form]
 $s : \mathrm{Var} \to M$, and $s(t) \in M$ for every $\mathcal{L}$-term $t$.
@@ -268,7 +253,7 @@ definition mirrors the inductive definition of terms themselves.
 %  §5  SATISFACTION  [STUB]
 % ──────────────────────────────────────────────────────────────
 
-\subsubsection{Satisfaction \textnormal{[Stub]}}
+\subsubsection*{Satisfaction \textnormal{[Stub]}}
 
 \begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
   left=6pt, right=6pt, top=4pt, bottom=4pt,
@@ -303,7 +288,7 @@ grounding out on atomic formulas evaluated via term evaluation.
 %  §6  ELEMENTARY EQUIVALENCE AND SUBSTRUCTURES  [STUB]
 % ──────────────────────────────────────────────────────────────
 
-\subsubsection{Elementary Equivalence and Substructures \textnormal{[Stub]}}
+\subsubsection*{Elementary Equivalence and Substructures \textnormal{[Stub]}}
 
 \begin{tcolorbox}[colback=gray!6, colframe=gray!40, arc=2pt,
   left=6pt, right=6pt, top=4pt, bottom=4pt,

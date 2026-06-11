@@ -2,10 +2,7 @@
 % Section: Boolean Rings
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=gray!6, colframe=gray!40, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Toolkit --- Boolean Rings}},
-  fonttitle=\small\bfseries]
+\begin{toolkitbox}{Toolkit --- Boolean Rings}
 \textbf{Concept family:} Boolean rings (Halmos--Givant §1) and their
 immediate consequences from the single idempotence axiom.
 
@@ -30,17 +27,14 @@ immediate consequences from the single idempotence axiom.
 \]
 \textbf{Central theorem chain:} Idempotence $\Rightarrow$ Characteristic 2
 $\Rightarrow$ Self Negation ($-p=p$) $\Rightarrow$ Commutativity of $\cdot$.
-\end{tcolorbox}
+\end{toolkitbox}
 
 % ---------------------------------------------------------
 % Definition: Boolean Ring
 % Source: Halmos & Givant, Introduction to Boolean Algebras, §1
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition --- Boolean Ring}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition --- Boolean Ring}
 \begin{definition}[Boolean Ring]
 \label{def:boolean-ring}
 A \textbf{Boolean ring} is an idempotent ring with unit.
@@ -66,7 +60,7 @@ Axiom numbering follows Halmos--Givant~\cite{HalmosGivant2009}.
 \hyperref[prf:boolean-ring-characteristic-2]{\textit{Go to proof
 that every Boolean ring has characteristic~$2$.}}
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -193,10 +187,7 @@ which both axioms~(10) and~(11) are verified.
 % Definition: Idempotent Element
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition --- Idempotent Element}},
-  fonttitle=\small\bfseries]
+\begin{propositionbox}{Definition --- Idempotent Element}
 \begin{definition}[Idempotent Element]
 \label{def:idempotent-element}
 An element $p$ of a ring $R$ is called \textbf{idempotent} if
@@ -206,7 +197,7 @@ p \cdot p = p.
 A ring in which every element is idempotent is called an
 \textbf{idempotent ring}.
 \end{definition}
-\end{tcolorbox}
+\end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -259,10 +250,7 @@ follow from idempotence alone, as the theorems below establish.
 % Definition: Characteristic 2
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition --- Characteristic 2}},
-  fonttitle=\small\bfseries]
+\begin{propositionbox}{Definition --- Characteristic 2}
 \begin{definition}[Characteristic 2]
 \label{def:characteristic-2}
 A ring $R$ is said to have \textbf{characteristic~$2$} if
@@ -270,7 +258,7 @@ A ring $R$ is said to have \textbf{characteristic~$2$} if
 p + p = 0 \qquad \text{for all } p \in R. \tag{10}
 \]
 \end{definition}
-\end{tcolorbox}
+\end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -330,6 +318,7 @@ p + p = 0 \qquad \text{for all } p \in R.
 \smallskip
 \noindent
 \hyperref[prf:boolean-ring-self-additive-inverse]{\textit{Go to proof.}}
+\hyperref[prf:self-additive-inverse]{Go to proof.}
 \end{lemma}
 
 \begin{remark*}[Standard quantified statement]
