@@ -6,12 +6,6 @@ on:
     paths:
       - 'volume-viii/**'
       - 'bibliography/volume-viii-logic-foundations.bib'
-  workflow_dispatch:
-    inputs:
-      dry_run:
-        description: "Run rsync without writing changes"
-        required: true
-        default: "true"
 
 jobs:
   sync:
@@ -29,39 +23,29 @@ jobs:
           token: ${{ secrets.SYNC_PAT }}
           path: monorepo
 
-      - name: Dry-run sync volume-viii and bibliography
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'true' }}
-        run: |
-          rsync -av --delete --dry-run source/volume-viii/ monorepo/volume-viii/
-          mkdir -p monorepo/bibliography
-          cmp -s source/bibliography/volume-viii-logic-foundations.bib monorepo/bibliography/volume-viii-logic-foundations.bib || echo "bibliography/volume-viii-logic-foundations.bib would be updated"
-
       - name: Validate volume bibliography
         run: |
           cd source
           python scripts/check_bibliography.py --bib-dir bibliography
 
-      - name: Validate leaf proof stubs
+      - name: Validate volume
         run: |
           cd source
-          python scripts/validate_leaf_proofs.py --root . --strict
+          python scripts/build_volume.py --validate-only
 
-      - name: Sync volume-viii into monorepo
-        if: ${{ github.event_name == 'push' || github.event.inputs.dry_run == 'false' }}
+      - name: Sync volume-viii/ into monorepo
         run: |
           rsync -av --delete source/volume-viii/ monorepo/volume-viii/
 
       - name: Sync volume-viii bibliography into monorepo
-        if: ${{ github.event_name == 'push' || github.event.inputs.dry_run == 'false' }}
         run: |
           mkdir -p monorepo/bibliography
           cp source/bibliography/volume-viii-logic-foundations.bib monorepo/bibliography/volume-viii-logic-foundations.bib
 
       - name: Commit and push if changed
-        if: ${{ github.event_name == 'push' || github.event.inputs.dry_run == 'false' }}
-        working-directory: monorepo
         run: |
-          git config user.name "lra-sync-bot"
+          cd monorepo
+          git config user.name  "lra-sync-bot"
           git config user.email "sync-bot@noreply.github.com"
           git add volume-viii/ bibliography/volume-viii-logic-foundations.bib
           git diff --cached --quiet && echo "No changes to sync" && exit 0
