@@ -58,9 +58,9 @@
   \par\medskip
 }
 
-\newcommand{\ProofStep}[2]{\medskip\noindent\textbf{Step #1\,---\,#2}\quad}
+\newcommand{\ProofStep}[2]{\medskip\noindent\textbf{Step #1\,—\,#2}\quad}
 % ============================================================
-% Proof annotation tags --- FIXED VERSION
+% Proof annotation tags — FIXED VERSION
 % ============================================================
 %
 % Problem: \marginpar is forbidden inside tabular, tcolorbox, theorem
@@ -69,8 +69,8 @@
 %
 % Solution: Two separate primitives.
 %
-%   \prooftag{color}{label}   --- margin version (use in proof body prose)
-%   \inlinetag{color}{label}  --- inline colored badge (use inside tabular T column,
+%   \prooftag{color}{label}   — margin version (use in proof body prose)
+%   \inlinetag{color}{label}  — inline colored badge (use inside tabular T column,
 %                               tcolorbox, definition, theorem environments)
 %
 % All named tag macros (e.g. \tagDU) produce the MARGIN version by default.
@@ -116,21 +116,21 @@
 \newcommand{\tagNEG} {\prooftag{black}{NEG}}
 \newcommand{\itagNEG}{\inlinetag{black}{NEG}}
 
-% ---- $\varepsilon$--N / tail-logic tags ----------------------------------
+% ---- ε–N / tail-logic tags ----------------------------------
 
 % AM = Algebraic Manipulation
 \newcommand{\tagAM} {\prooftag{black}{AM}}
 \newcommand{\itagAM}{\inlinetag{black}{AM}}
 
-% EA = $\varepsilon$ arbitrary (start of universal $\varepsilon$ argument)
+% EA = ε arbitrary (start of universal ε argument)
 \newcommand{\tagEA} {\prooftag{black}{EA}}
 \newcommand{\itagEA}{\inlinetag{black}{EA}}
 
-% NE = choose N = N($\varepsilon$)
+% NE = choose N = N(ε)
 \newcommand{\tagNE} {\prooftag{black}{NE}}
 \newcommand{\itagNE}{\inlinetag{black}{NE}}
 
-% TN = take tail indices >= N
+% TN = take tail indices ≥ N
 \newcommand{\tagTN} {\prooftag{black}{TN}}
 \newcommand{\itagTN}{\inlinetag{black}{TN}}
 
@@ -176,7 +176,7 @@
 % ============================================================
 % Relation symbols
 % ============================================================
-\newcommand{\colonequiv}{\vcentcolon\equiv}   % predicate definitional equivalence  P :\equiv Q
+\newcommand{\colonequiv}{\vcentcolon\equiv}   % predicate definitional equivalence  P :≡ Q
 \newcommand{\coloniff}{\;\vcentcolon\iff\;}   % biconditional form of the above
 
 % ============================================================
@@ -235,7 +235,7 @@
 }
 
 % ============================================================
-% Structural metadata markers --- no PDF output
+% Structural metadata markers — no PDF output
 % Extraction markers: signature, structure, classification, proof-vault-url
 % ============================================================
 \newcommand{\LRAProofFor}[1]{}            % proof-file target theorem/proposition/lemma/corollary label
@@ -294,7 +294,7 @@
 \newcommand{\CC}{\hyperref[sec:cauchy-proofs]{\textsc{cc}}}
 
 % ============================================================
-% Flash macros --- all no-ops; produce no PDF output
+% Flash macros — all no-ops; produce no PDF output
 % Used by scripts/extract-cards.py (and future graph extractors)
 % to generate flashcards, theorem-definition explorer nodes,
 % logical forms, and dependency metadata.

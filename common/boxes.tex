@@ -55,7 +55,7 @@
 
 % --- Blueprint macros (merged from blueprint-macros.tex) ---
 % ============================================================
-%  Blueprint shared macros --- \input{blueprint-macros} once
+%  Blueprint shared macros — \input{blueprint-macros} once
 %  after \begin{document} before any blueprint \input calls.
 %
 %  Required in main.tex preamble:
@@ -67,7 +67,7 @@
 %    \newtheorem{remark}{Remark}[chapter]
 % ============================================================
 
-% -- Section boxes ---------------------------------------------
+% ── Section boxes ─────────────────────────────────────────────
 % NEW: strong frame in structure colour
 \newtcolorbox{bpnew}[2]{
   enhanced,
@@ -96,7 +96,7 @@
   before skip=0pt, after skip=7pt,
 }
 
-% -- Entry line ------------------------------------------------
+% ── Entry line ────────────────────────────────────────────────
 % \bpitem{symbol}{math}{gloss}   (gloss may be empty)
 \newcommand{\bpitem}[3]{%
   \noindent
@@ -108,7 +108,7 @@
   \par\vspace{3pt}%
 }
 
-% -- Page header -----------------------------------------------
+% ── Page header ───────────────────────────────────────────────
 % \bpheader{colour}{Name}{signature}
 \newcommand{\bpheader}[3]{%
   \noindent\vbox{\offinterlineskip
@@ -123,7 +123,7 @@
   }\par\vspace{8pt}%
 }
 
-% -- Footer ----------------------------------------------------
+% ── Footer ────────────────────────────────────────────────────
 % \bpfooter{left}{right}
 \newcommand{\bpfooter}[2]{%
   \vfill
@@ -138,6 +138,15 @@
 % Dependency Figure Styles
 % Add to common/boxes.tex
 % =========================================================
+
+\input{common/boxes/formal-definition}
+\input{common/boxes/formal-definitional-root}
+\input{common/boxes/formal-axiom}
+\input{common/boxes/formal-theorem}
+\input{common/boxes/formal-lemma}
+\input{common/boxes/formal-proposition}
+\input{common/boxes/formal-corollary}
+\input{common/boxes/model}
 
 % Requires TikZ libraries:
 % \usetikzlibrary{arrows.meta,positioning,calc}
@@ -359,95 +368,6 @@ depedgelab/.style={
 
 \newcommand{\NoLocalDependencies}{}
 \newcommand{\DefinitionalRoot}{}
-
-
-% ============================================================
-% Formal mathematical content boxes
-% ============================================================
-
-\newtcolorbox{definitionbox}[1]{
-  colback=defbox,
-  colframe=defborder,
-  arc=2pt,
-  left=6pt,
-  right=6pt,
-  top=4pt,
-  bottom=4pt,
-  title={\small\textbf{#1}},
-  fonttitle=\small\bfseries
-}
-
-\newtcolorbox{definitionalbox}[1]{
-  colback=defrootbox,
-  colframe=defrootborder,
-  arc=2pt,
-  left=6pt,
-  right=6pt,
-  top=4pt,
-  bottom=4pt,
-  title={\small\textbf{#1}},
-  fonttitle=\small\bfseries
-}
-
-\newtcolorbox{axiombox}[1]{
-  colback=axiombox,
-  colframe=axiomborder,
-  arc=2pt,
-  left=6pt,
-  right=6pt,
-  top=4pt,
-  bottom=4pt,
-  title={\small\textbf{#1}},
-  fonttitle=\small\bfseries
-}
-
-\newtcolorbox{theorembox}[1]{
-  colback=thmbox,
-  colframe=thmborder,
-  arc=2pt,
-  left=6pt,
-  right=6pt,
-  top=4pt,
-  bottom=4pt,
-  title={\small\textbf{#1}},
-  fonttitle=\small\bfseries
-}
-
-\newtcolorbox{lemmabox}[1]{
-  colback=lembox,
-  colframe=lemborder,
-  arc=2pt,
-  left=6pt,
-  right=6pt,
-  top=4pt,
-  bottom=4pt,
-  title={\small\textbf{#1}},
-  fonttitle=\small\bfseries
-}
-
-\newtcolorbox{propositionbox}[1]{
-  colback=propbox,
-  colframe=propborder,
-  arc=2pt,
-  left=6pt,
-  right=6pt,
-  top=4pt,
-  bottom=4pt,
-  title={\small\textbf{#1}},
-  fonttitle=\small\bfseries
-}
-
-\newtcolorbox{corollarybox}[1]{
-  colback=corbox,
-  colframe=corborder,
-  arc=2pt,
-  left=6pt,
-  right=6pt,
-  top=4pt,
-  bottom=4pt,
-  title={\small\textbf{#1}},
-  fonttitle=\small\bfseries
-}
 
 
 % ============================================================
