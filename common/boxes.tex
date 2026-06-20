@@ -55,7 +55,7 @@
 
 % --- Blueprint macros (merged from blueprint-macros.tex) ---
 % ============================================================
-%  Blueprint shared macros — \input{blueprint-macros} once
+%  Blueprint shared macros --- \input{blueprint-macros} once
 %  after \begin{document} before any blueprint \input calls.
 %
 %  Required in main.tex preamble:
@@ -67,7 +67,7 @@
 %    \newtheorem{remark}{Remark}[chapter]
 % ============================================================
 
-% ── Section boxes ─────────────────────────────────────────────
+% -- Section boxes ---------------------------------------------
 % NEW: strong frame in structure colour
 \newtcolorbox{bpnew}[2]{
   enhanced,
@@ -96,7 +96,7 @@
   before skip=0pt, after skip=7pt,
 }
 
-% ── Entry line ────────────────────────────────────────────────
+% -- Entry line ------------------------------------------------
 % \bpitem{symbol}{math}{gloss}   (gloss may be empty)
 \newcommand{\bpitem}[3]{%
   \noindent
@@ -108,7 +108,7 @@
   \par\vspace{3pt}%
 }
 
-% ── Page header ───────────────────────────────────────────────
+% -- Page header -----------------------------------------------
 % \bpheader{colour}{Name}{signature}
 \newcommand{\bpheader}[3]{%
   \noindent\vbox{\offinterlineskip
@@ -123,7 +123,7 @@
   }\par\vspace{8pt}%
 }
 
-% ── Footer ────────────────────────────────────────────────────
+% -- Footer ----------------------------------------------------
 % \bpfooter{left}{right}
 \newcommand{\bpfooter}[2]{%
   \vfill

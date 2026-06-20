@@ -2,7 +2,7 @@
 % common/volume-preamble.tex
 % Shared preamble for standalone per-volume root files.
 %
-% Usage — in any volume-N-main.tex:
+% Usage --- in any volume-N-main.tex:
 %   \documentclass[12pt, a4paper]{report}
 %   \input{common/volume-preamble}
 %   \begin{document}
@@ -13,7 +13,7 @@
 % If you add a package to main.tex, add it here too.
 % =========================================================
 
-% ── Shared infrastructure ─────────────────────────────────
+% -- Shared infrastructure ---------------------------------
 \input{common/preamble}
 \input{common/boxes}
 \input{common/breadcrumb-macros}
@@ -22,12 +22,12 @@
 \input{common/environments}
 \input{common/macros}
 
-% ── Hyperlinks and cross-references ───────────────────────
+% -- Hyperlinks and cross-references -----------------------
 \usepackage{hyperref}
 \usepackage[nameinlink,capitalize,noabbrev]{cleveref}
 \usepackage{bookmark}
 
-% ── cleveref configuration ────────────────────────────────
+% -- cleveref configuration --------------------------------
 \crefname{theorem}{Theorem}{Theorems}
 \Crefname{theorem}{Theorem}{Theorems}
 \crefname{claim}{Claim}{Claims}
@@ -47,11 +47,11 @@
   \def\hyperref[#1]#2{#2}%
 }
 
-% ── Indexes ───────────────────────────────────────────────
+% -- Indexes -----------------------------------------------
 \usepackage{imakeidx}
 \makeindex[name=tech,title={Technique Index}]
 \makeindex[name=dep,title={Dependency Index}]
 
-% ── Numbering and TOC depth ───────────────────────────────
+% -- Numbering and TOC depth -------------------------------
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
