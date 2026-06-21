@@ -23,9 +23,14 @@
 \input{common/macros}
 
 % ── Hyperlinks and cross-references ───────────────────────
+\usepackage{xr-hyper}
 \usepackage{hyperref}
 \usepackage[nameinlink,capitalize,noabbrev]{cleveref}
 \usepackage{bookmark}
+
+% Optional workstation-only external references for split volume builds.
+% The local file is ignored and absent in CI/GitHub builds.
+\InputIfFileExists{common/local-external-volume-refs.tex}{}{}
 
 % ── cleveref configuration ────────────────────────────────
 \crefname{theorem}{Theorem}{Theorems}
