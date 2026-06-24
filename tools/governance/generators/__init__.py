@@ -1,1 +1,0 @@
-"""Canonical governance generators."""
