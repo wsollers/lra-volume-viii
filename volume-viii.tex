@@ -1,0 +1,36 @@
+% =========================================================
+% volume-viii.tex --- Standalone root for Volume VIII
+% Volume VIII: Applied and Computational Mathematics
+%
+% Build (local): latexmk -lualatex volume-viii.tex
+% Build (Overleaf): Menu $\to$ Main Document $\to$ volume-viii.tex
+% =========================================================
+\documentclass[12pt, a4paper]{report}
+\input{common/volume-preamble}
+
+\begin{document}
+\ExplSyntaxOff
+\renewcommand{\familydefault}{\rmdefault}
+
+\pagenumbering{roman}
+\input{volume-viii/frontispiece}
+\input{volume-viii/volume-viii-title}
+
+\clearpage
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\input{volume-viii/index}
+
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{%
+  bibliography/volume-viii-applied-methods,%
+  bibliography/volume-viii-numerical-foundations%
+}
+
+\printindex[tech]
+\printindex[dep]
+
+\end{document}
