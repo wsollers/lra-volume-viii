@@ -1,0 +1,16 @@
+# =========================================================
+# chapter.yaml — Geometric Modeling
+# volume-viii/book-applied-methods/geometric-modeling/
+#
+# Machine-readable card data for all labelled environments.
+# Replaces Flash macros in .tex files.
+# =========================================================
+
+chapter: geometric-modeling
+volume: volume-viii
+path: volume-viii/book-applied-methods/geometric-modeling
+book: book-applied-methods
+
+entries:
+  # Add entries here as notes are written.
+  # Schema: see DESIGN.md §10-yaml

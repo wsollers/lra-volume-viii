@@ -1,0 +1,65 @@
+% =========================================================
+% Computational Linear Algebra --- Rules for Matrix Operations
+% (Strang \S{}2.4 / Johnston \S{}1.3)
+% =========================================================
+
+\section{Rules for Matrix Operations}
+
+% ---------------------------------------------------------
+\subsection*{Algebraic Rules}
+
+\begin{theorembox}{Theorem (Rules for Matrix Multiplication)}
+When the dimensions are compatible:
+\begin{enumerate}
+  \item $A(BC) = (AB)C$ \hfill (associativity)
+  \item $A(B + C) = AB + AC$ \hfill (left distributivity)
+  \item $(A + B)C = AC + BC$ \hfill (right distributivity)
+  \item $c(AB) = (cA)B = A(cB)$ for any scalar $c$
+  \item $(AB)^T = B^T A^T$ \hfill (transpose reverses order)
+\end{enumerate}
+The following do \textbf{not} hold in general:
+\begin{itemize}
+  \item $AB \neq BA$ (not commutative)
+  \item $AB = AC \not\Rightarrow B = C$ (no cancellation in general)
+  \item $AB = 0 \not\Rightarrow A = 0$ or $B = 0$
+\end{itemize}
+\end{theorembox}
+
+% ---------------------------------------------------------
+\subsection*{Diagonal Matrices}
+
+\begin{propositionbox}{Definition (Diagonal Matrix)}
+A \emph{diagonal matrix} $D \in \mathbb{R}^{n \times n}$ has $D_{ij} = 0$
+for all $i \neq j$.
+Written $D = \operatorname{diag}(d_1, d_2, \ldots, d_n)$.
+
+Key computational facts:
+\begin{itemize}
+  \item $DA$ multiplies each \emph{row} $i$ of $A$ by $d_i$.
+  \item $AD$ multiplies each \emph{column} $j$ of $A$ by $d_j$.
+  \item $D_1 D_2 = \operatorname{diag}(d_1 e_1, \ldots, d_n e_n)$ where $e_j$ are the diagonal entries of $D_2$.
+\end{itemize}
+\end{propositionbox}
+
+% ---------------------------------------------------------
+\subsection*{Block Matrices}
+
+\begin{remark*}[Block matrix multiplication]
+Matrices can be partitioned into blocks, and multiplied block-by-block
+as if the blocks were scalar entries, provided the block sizes are
+compatible.
+If $A = \begin{pmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{pmatrix}$
+and $B = \begin{pmatrix} B_{11} & B_{12} \\ B_{21} & B_{22} \end{pmatrix}$,
+then
+\[
+  AB = \begin{pmatrix}
+    A_{11}B_{11} + A_{12}B_{21} & A_{11}B_{12} + A_{12}B_{22} \\
+    A_{21}B_{11} + A_{22}B_{21} & A_{21}B_{12} + A_{22}B_{22}
+  \end{pmatrix},
+\]
+provided inner block dimensions match.
+The standard matrix of a linear transformation $[T] = [T(\mathbf{e}_1) \mid T(\mathbf{e}_2) \mid \cdots \mid T(\mathbf{e}_n)]$
+is a block matrix with column vectors as blocks, and
+$[T]\mathbf{v} = v_1 T(\mathbf{e}_1) + \cdots + v_n T(\mathbf{e}_n)$
+is block matrix--vector multiplication.
+\end{remark*}

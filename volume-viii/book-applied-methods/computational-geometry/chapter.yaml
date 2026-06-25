@@ -1,0 +1,8 @@
+volume: volume-viii
+chapter: computational-geometry
+title: Computational Geometry
+status: active
+topics:
+  - convex-hulls
+path: volume-viii/book-applied-methods/computational-geometry
+book: book-applied-methods

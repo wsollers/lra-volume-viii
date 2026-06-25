@@ -1,0 +1,16 @@
+# =========================================================
+# chapter.yaml — Computational Linear Algebra
+# volume-viii/book-applied-methods/computational-linear-algebra/
+#
+# Machine-readable card data for all labelled environments.
+# Replaces Flash macros in .tex files.
+# =========================================================
+
+chapter: computational-linear-algebra
+volume: volume-viii
+path: volume-viii/book-applied-methods/computational-linear-algebra
+book: book-applied-methods
+
+entries:
+  # Add entries here as notes are written.
+  # Schema: see DESIGN.md §10-yaml

@@ -1,0 +1,71 @@
+% =========================================================
+% Computational Linear Algebra --- The Matrix of a Linear Transformation
+% (Strang \S{}8.2 / Johnston \S{}1.4 / Ashraf \S{}3.5--3.6)
+% =========================================================
+
+\section{The Matrix of a Linear Transformation}
+
+% ---------------------------------------------------------
+\subsection*{The Standard Matrix}
+
+\begin{theorembox}{Theorem (Standard Matrix of a Linear Transformation)}
+A function $T : \mathbb{R}^n \to \mathbb{R}^m$ is a linear transformation if and only if
+there exists a unique matrix $[T] \in \mathbb{R}^{m \times n}$ such that
+\[
+  T(\mathbf{v}) = [T]\mathbf{v} \quad \text{for all } \mathbf{v} \in \mathbb{R}^n.
+\]
+The \emph{standard matrix} $[T]$ is constructed by placing the images of
+the standard basis vectors as columns:
+\[
+  [T] = \bigl[\, T(\mathbf{e}_1) \;\mid\; T(\mathbf{e}_2) \;\mid\; \cdots \;\mid\; T(\mathbf{e}_n) \,\bigr].
+\]
+\end{theorembox}
+
+\begin{remark*}[Why this works]
+Since every $\mathbf{v} = v_1\mathbf{e}_1 + \cdots + v_n\mathbf{e}_n$,
+linearity gives
+\[
+  T(\mathbf{v}) = v_1 T(\mathbf{e}_1) + \cdots + v_n T(\mathbf{e}_n) = [T]\mathbf{v}.
+\]
+Knowing $T$ on the basis vectors determines $T$ on the entire space.
+\end{remark*}
+
+% ---------------------------------------------------------
+\subsection*{Matrix Under Change of Basis}
+
+\begin{propositionbox}{Definition (Matrix Relative to a Basis)}
+Let $T : \mathbb{R}^n \to \mathbb{R}^n$ be a linear transformation and let
+$\mathcal{B} = \{\mathbf{b}_1, \ldots, \mathbf{b}_n\}$ be an ordered basis.
+The \emph{matrix of $T$ relative to $\mathcal{B}$}, denoted $[T]_\mathcal{B}$,
+has as its $j$-th column the coordinates of $T(\mathbf{b}_j)$ expressed in the
+basis $\mathcal{B}$.
+
+If $P$ is the transition matrix whose columns are $\mathbf{b}_1, \ldots, \mathbf{b}_n$
+expressed in the standard basis, then
+\[
+  [T]_\mathcal{B} = P^{-1} [T] P.
+\]
+Two matrices related by $B = P^{-1}AP$ are called \emph{similar}.
+\end{propositionbox}
+
+\begin{remark*}[NURBS connection: B\'{e}zier curve in matrix form]
+The B\'{e}zier curve has the matrix representation
+\[
+  C(u) = [u^i]^T M [P_i],
+\]
+where:
+\begin{itemize}
+  \item $[u^i]^T = (1, u, u^2, \ldots, u^n)$ is the monomial basis vector,
+  \item $[P_i]$ is the column vector of control points,
+  \item $M$ is the $(n+1)\times(n+1)$ matrix that encodes the Bernstein polynomials
+        in the monomial basis.
+\end{itemize}
+The matrix $M$ is the standard matrix of the linear transformation
+that converts from Bernstein basis coordinates to monomial basis coordinates.
+Setting $[\mathbf{a}_i] = M[P_i]$ gives the power basis representation of the
+same curve (so the B\'{e}zier coefficients $[P_i]$ are the coordinates of the
+curve in the Bernstein basis, and $[\mathbf{a}_i]$ are the coordinates in the
+monomial basis).
+Converting between the two is exactly the change-of-basis operation $P^{-1}AP$
+applied to the coefficient vectors.
+\end{remark*}

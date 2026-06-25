@@ -1,0 +1,68 @@
+% =========================================================
+% Computational Linear Algebra --- Determinants and the Cross Product
+% (Strang \S{}5.2 / Johnston \S{}1.A / Ashraf \S{}1.4)
+% =========================================================
+
+\section{Determinants and the Cross Product}
+
+% ---------------------------------------------------------
+\subsection*{\texorpdfstring{The $3 \times 3$ Determinant}{The 3 x 3 Determinant}}
+
+\begin{propositionbox}{Definition ($3 \times 3$ Determinant via Cofactor Expansion)}
+For $A \in \mathbb{R}^{3 \times 3}$, expanding along the first row:
+\[
+  \det(A) = a_{11}(a_{22}a_{33} - a_{23}a_{32})
+           - a_{12}(a_{21}a_{33} - a_{23}a_{31})
+           + a_{13}(a_{21}a_{32} - a_{22}a_{31}).
+\]
+The signs alternate: $+, -, +$ along the first row.
+\end{propositionbox}
+
+% ---------------------------------------------------------
+\subsection*{The Cross Product}
+
+\begin{propositionbox}{Definition (Cross Product)}
+For $\mathbf{v} = (v_1, v_2, v_3)$ and $\mathbf{w} = (w_1, w_2, w_3)$ in $\mathbb{R}^3$,
+the \emph{cross product} is
+\[
+  \mathbf{v} \times \mathbf{w}
+  = \begin{vmatrix} \mathbf{e}_1 & \mathbf{e}_2 & \mathbf{e}_3 \\
+                    v_1 & v_2 & v_3 \\
+                    w_1 & w_2 & w_3
+    \end{vmatrix}
+  = (v_2 w_3 - v_3 w_2,\;\; v_3 w_1 - v_1 w_3,\;\; v_1 w_2 - v_2 w_1).
+\]
+\end{propositionbox}
+
+\begin{theorembox}{Theorem (Properties of the Cross Product)}
+For $\mathbf{v}, \mathbf{w}, \mathbf{x} \in \mathbb{R}^3$ and $c \in \mathbb{R}$:
+\begin{enumerate}
+  \item $\mathbf{v} \times \mathbf{w} = -(\mathbf{w} \times \mathbf{v})$ \hfill (anticommutativity)
+  \item $\mathbf{v} \times (\mathbf{w} + \mathbf{x}) = \mathbf{v} \times \mathbf{w} + \mathbf{v} \times \mathbf{x}$ \hfill (distributivity)
+  \item $\mathbf{v} \times \mathbf{v} = \mathbf{0}$
+  \item $(c\mathbf{v}) \times \mathbf{w} = c(\mathbf{v} \times \mathbf{w})$
+  \item $\mathbf{v} \cdot (\mathbf{v} \times \mathbf{w}) = 0$ and $\mathbf{w} \cdot (\mathbf{v} \times \mathbf{w}) = 0$ \hfill (orthogonality)
+  \item $\|\mathbf{v} \times \mathbf{w}\| = \|\mathbf{v}\|\,\|\mathbf{w}\|\sin\theta$ \hfill (magnitude = parallelogram area)
+\end{enumerate}
+\end{theorembox}
+
+\begin{remark*}[NURBS connection: surface normal vectors]
+The unit normal to a parametric surface at a point $(u,v)$ is
+\[
+  N(u,v) = \frac{S_u \times S_v}{\|S_u \times S_v\|},
+\]
+where $S_u$ and $S_v$ are the partial derivative vectors of the surface
+with respect to the parameters.
+The cross product gives the direction orthogonal to both tangent directions;
+dividing by the norm produces the unit normal.
+This appears in Piegl \& Tiller \S{}1.1 and is used throughout whenever
+normal vectors are needed (shading, offset surfaces, etc.).
+\end{remark*}
+
+\begin{remark*}[Mnemonic for the cross product]
+Write the entries of $\mathbf{v}$ and $\mathbf{w}$ each twice in a $2 \times 6$ array.
+Ignore the first and last columns.
+Draw three ``X'' shapes between columns 2--3, 3--4, and 4--5.
+Each ``X'' contributes one entry of $\mathbf{v} \times \mathbf{w}$: add along forward
+diagonals, subtract along backward diagonals.
+\end{remark*}
