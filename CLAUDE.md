@@ -2,14 +2,14 @@
 GENERATED FILE — DO NOT EDIT BY HAND.
 
 Source repo: wsollers/lra-governance
-Source commit: d98bb51fc80e683b38a9d1e76f4a0c91037ede0a
+Source commit: 36fd69ac2e23b406e522c0c753400ce7f3938ff0
 Generated from:
 - docs/governance/...
 - docs/architecture/...
-- docs/governance/repo-overlays/learning-real-analysis.md
+- docs/governance/repo-overlays/lra-volume.md
 
 Regenerate from lra-governance.
-Emergency downstream edits must be ported upstream before the next sync.
+Emergency downstream edits must be ported upstream before regeneration.
 -->
 
 # Claude Instructions
@@ -25,34 +25,86 @@ the same repository as the canonical local instruction body.
 - Follow the owning repository boundary for every task.
 - Do not include secrets, credentials, tokens, or machine-local private values.
 - Do not modify mathematical content during governance or wrapper-generation tasks.
-- Do not touch `Learning-Real-Analysis/scripts/`.
+- Do not touch the retired `Learning-Real-Analysis` monorepo.
 - Port emergency downstream instruction repairs back to `lra-governance`.
 
 ## Repo Overlay
 
-# Learning-Real-Analysis Overlay
+# lra-volume Overlay
 
-Stub overlay for the monorepo integration hub.
+Stub overlay for `lra-volume-i` through `lra-volume-viii`.
+Named volume overlays, such as `lra-volume-ii.md`, may add narrow
+cross-repository metadata contracts while keeping implementation ownership in
+the specialist repo.
 
 Owned concerns:
 
-- assembled monorepo integration,
-- omnibus builds,
-- canonical predicate / notation / relation YAML files,
-- cross-volume extraction integration,
-- sync receiver behavior.
+- volume content only,
+- Overleaf-ready volume roots,
+- external `lra-common` consumed by the build environment,
+- independent volume PDF builds published to `lra-volumes-output`.
 
-Do not touch the intentionally untracked `scripts/` directory as part of this
-governance migration.
+This overlay may contain negative guard rails that say specialist rules do not
+apply to volume repos. It must not contain positive Lean-specific, C++ /
+Vulkan / simulation, numerical-analysis / benchmark / plotting, or PDF
+extraction workflow rules.
 
 ## Agent Scope
 
-Agents working here may coordinate across integrated content, canonical YAML,
-and extraction dispatch, but must not treat downstream synced copies as their
-own source of truth.
+Volume agents may edit only the owning `volume-N/` content unless a task
+explicitly says otherwise. They should not edit copied `common/`, generated
+governance wrappers, or canonical YAML. Shared LaTeX infrastructure belongs in
+`lra-common` and is supplied to builds by the Docker image or an explicit
+checkout.
 
-Canonical YAML edits are allowed only when the task explicitly targets
-`predicates.yaml`, `notation.yaml`, or `relations.yaml`.
+Volume tasks should preserve Overleaf readiness and the independent volume build
+shape. There is no monorepo to sync into.
+
+## Build Commands
+
+From a volume repository, validation is:
+
+```powershell
+python ..\lra-governance\scripts\build_volume.py --root . --validate-only
+```
+
+The Docker build helper discovers and builds every canonical root:
+`volume-{roman}.tex` plus each `volume-{roman}-{book-slug}.tex`. Use it for
+full volume and individual book PDF checks:
+
+```powershell
+python ..\lra-governance\tools\governance\build_volume_docker.py --root . --common-root ..\lra-common --output-dir build\digital
+python ..\lra-governance\tools\governance\build_volume_docker.py --root . --common-root ..\lra-common --print-edition --output-dir build\print
+```
+
+To build one book root, pass it explicitly:
+
+```powershell
+python ..\lra-governance\tools\governance\build_volume_docker.py --root . --common-root ..\lra-common --tex-root volume-i-set-theory.tex --output-dir build\digital
+```
+
+## Stub Chapters
+
+Volume chapter stubs follow the global `stub-chapter-standards.md` standard.
+After stub generation, run the local volume build command when available; for
+standard LRA volume roots, use the Docker build helper above unless local
+instructions say otherwise.
+
+## Stub Sections
+
+Volume section stubs follow the global `stub-section-standards.md` standard.
+Section-stub tasks must update the owning chapter's notes and proofs routers
+using the local routing convention, then run the local volume build command
+when available.
+
+## Artifact Payload Generation
+
+For large chapter artifact generation, use the deterministic payload workflow
+in `docs/workflows/artifact-payload-generation.md`. Machine-ingested JSON or
+JSONL payloads are the source of truth; Codex should rehydrate payloads through
+the importer and generator, preserve pedagogical order, keep notation before
+first use, and run deterministic local audits by default. AI-backed audits
+using `-ai codex` are opt-in only.
 
 ## Provider Notes
 

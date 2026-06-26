@@ -12,7 +12,10 @@ Regenerate from lra-governance.
 Emergency downstream edits must be ported upstream before regeneration.
 -->
 
-# Gemini Instructions
+# LRA Repository Instructions
+
+This file is intended for `.github/instructions/lra.instructions.md`. Keep it
+concise and refer to canonical governance docs rather than copying large docs.
 
 ## Global Agent Rules
 
@@ -103,4 +106,4 @@ using `-ai codex` are opt-in only.
 
 ## Provider Notes
 
-Gemini should follow this wrapper and the generated repo overlay.
+Keep provider-specific guidance concise and defer durable policy to governance docs.
