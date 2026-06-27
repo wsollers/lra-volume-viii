@@ -1,5 +1,5 @@
 % =========================================================
-% volume-viii.tex --- Standalone root for Volume VIII
+% volume-viii.tex --- Standalone volume root
 % Volume VIII: Applied and Computational Mathematics
 %
 % Build (local): latexmk -lualatex volume-viii.tex
@@ -13,10 +13,10 @@
 \renewcommand{\familydefault}{\rmdefault}
 
 \pagenumbering{roman}
-\input{volume-viii/frontispiece}
-\input{volume-viii/volume-viii-title}
+\input{volume-viii/frontmatter}
+\LRAFrontMatterPage{From Turing to Carmack}{Applied and Computational Mathematics}{}{Isaac Newton}{1643-1727}{images/newton.png}
+\input{common/dedication}
 
-\clearpage
 \tableofcontents
 \clearpage
 \pagenumbering{arabic}
@@ -28,7 +28,7 @@
 \bibliographystyle{plainnat}
 \bibliography{%
   bibliography/volume-viii-applied-methods,%
-  bibliography/volume-viii-numerical-foundations%
+  bibliography/volume-viii-numerical-foundations
 }
 
 \printindex[tech]
