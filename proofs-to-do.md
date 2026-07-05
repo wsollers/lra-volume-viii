@@ -3,7 +3,7 @@
 Proof-writing order is dependency-first among active TODO proof labels, with the generated knowledge graph order used as the stable tie-breaker.
 Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
 
-Open proofs to do: 5
+Open proofs to do: 4
 Completed in this tracker: 0
 
 1. () `lem:computational-geometry-convex-hull-smallest-convex-set` — **Convex hull as the smallest convex set**
@@ -16,24 +16,7 @@ Completed in this tracker: 0
    >  \bigcap\{K\subseteq\mathbb{R}^2 : K\text{ is convex and }P\subseteq K\}.
    > \]
 
-2. () `lem:computational-geometry-linear-functionals-convex-combinations` — **Linear functionals preserve convex combinations**
-   > **Statement.**
-   > Let \(d\in\mathbb{R}^2\), and let
-   > \[
-   >  z=\sum_{i=1}^{n}\lambda_i q_i
-   > \]
-   > be a convex combination of points \(q_1,\dots,q_n\in\mathbb{R}^2\). Then
-   > \[
-   >  \langle d,z\rangle
-   >  =
-   >  \sum_{i=1}^{n}\lambda_i\langle d,q_i\rangle.
-   > \]
-   > Consequently, if \(\langle d,q_i\rangle\le M\) for every \(i\), then
-   > \[
-   >  \langle d,z\rangle\le M.
-   > \]
-
-3. () `thm:computational-geometry-supporting-functional-hull-vertices` — **Supporting functional characterization of hull vertices**
+2. () `thm:computational-geometry-supporting-functional-hull-vertices` — **Supporting functional characterization of hull vertices**
    > **Statement.**
    > Let \(P\subset\mathbb{R}^2\) be finite and in general position. A point \(p\in P\)
    > is a vertex of \(\conv(P)\) if and only if there exists a direction
@@ -49,7 +32,7 @@ Completed in this tracker: 0
    > \]
    > Thus every hull vertex is a maximum of \(P\) under some linear functional.
 
-4. () `thm:computational-geometry-monotone-slope-upper-hull` — **Monotone slope characterization of the upper hull**
+3. () `thm:computational-geometry-monotone-slope-upper-hull` — **Monotone slope characterization of the upper hull**
    > **Statement.**
    > Let \(P\subset\mathbb{R}^2\) be finite and in general position. Let
    > \[
@@ -80,7 +63,7 @@ Completed in this tracker: 0
    > The lower hull is characterized similarly, with strictly increasing consecutive
    > slopes.
 
-5. () `thm:computational-geometry-greedy-slope-upper-hull` — **Greedy slope construction of the upper hull**
+4. () `thm:computational-geometry-greedy-slope-upper-hull` — **Greedy slope construction of the upper hull**
    > **Statement.**
    > Let \(P\subset\mathbb{R}^2\) be finite and in general position. Define
    > \[
