@@ -91,6 +91,7 @@ is contained in every convex set that contains \(P\). Hence
   =
   \bigcap\{K\subseteq\mathbb{R}^2 : K\text{ is convex and }P\subseteq K\}.
 \]
+\hyperref[prf:computational-geometry-convex-hull-smallest-convex-set]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
 
@@ -172,7 +173,8 @@ corresponding containment, extremal, or construction property stated there.
 
 \begin{lemmabox}{Lemma}
 \begin{lemma}[Linear functionals preserve convex combinations]
-\label{lem:computational-geometry-linear-functionals-convex-combinations}
+\label{lem:computational-geometry-linear-functionals-convex-combi
+nations}
 Let \(d\in\mathbb{R}^2\), and let
 \[
   z=\sum_{i=1}^{n}\lambda_i q_i
@@ -187,6 +189,8 @@ Consequently, if \(\langle d,q_i\rangle\le M\) for every \(i\), then
 \[
   \langle d,z\rangle\le M.
 \]
+\hyperref[prf:computational-geometry-linear-functionals-convex-combi
+nations]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}\begin{remark*}[Proof]
 See
@@ -222,6 +226,7 @@ Equivalently, \(p\) is the unique point of \(P\) attaining
   \max_{q\in P}\langle d,q\rangle.
 \]
 Thus every hull vertex is a maximum of \(P\) under some linear functional.
+\hyperref[prf:computational-geometry-supporting-functional-hull-vertices]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -300,6 +305,7 @@ vertex of
 \]
 The lower hull is characterized similarly, with strictly increasing consecutive
 slopes.
+\hyperref[prf:computational-geometry-monotone-slope-upper-hull]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}\begin{remark*}[Proof]
 See
@@ -348,6 +354,7 @@ Then the points
 \]
 produced by this construction are exactly the vertices of the upper hull of
 \(P\), and the slopes encountered along the way are strictly decreasing.
+\hyperref[prf:computational-geometry-greedy-slope-upper-hull]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -357,7 +364,8 @@ See
 \end{remark*}
 
 \begin{remark*}[Standard quantified statement]
-The statement applies to the objects named in the hypotheses and asserts the
+The statement applies to the objects named in th
+e hypotheses and asserts the
 corresponding containment, extremal, or construction property stated there.
 \end{remark*}
 
