@@ -13,6 +13,16 @@ For closed intervals $[a,b]$ and $[c,d]$, their \emph{sum} is
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named interval-arithmetic operation or relation by
+the formula stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The formula records how interval data are transformed while preserving the
+corresponding enclosure or containment meaning.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:closed-interval]{Closed Interval}
@@ -28,6 +38,16 @@ For closed intervals $[a,b]$ and $[c,d]$, their \emph{difference} is
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named interval-arithmetic operation or relation by
+the formula stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The formula records how interval data are transformed while preserving the
+corresponding enclosure or containment meaning.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -46,6 +66,16 @@ For closed intervals $[a,b]$ and $[c,d]$, their \emph{product} is
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named interval-arithmetic operation or relation by
+the formula stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The formula records how interval data are transformed while preserving the
+corresponding enclosure or containment meaning.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:closed-interval]{Closed Interval}
@@ -60,6 +90,28 @@ $[a,b] \subseteq [c,d]$ if and only if $c \leq a$ and $b \leq d$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named interval-arithmetic operation or relation by
+the formula stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The formula records how interval data are transformed while preserving the
+corresponding enclosure or containment meaning.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Interval arithmetic provides a framework for rigorous numerical computation
+with guaranteed error bounds. A real number $x \in [a,b]$ means the computed
+value may lie anywhere in the interval; operations propagate these bounds.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+\textit{This section is a stub. A full treatment -- the sub-distributivity law,
+dependency problem, applications to root-finding, and connections to
+compactness -- will be developed in a future revision.}
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:closed-interval]{Closed Interval}
@@ -67,15 +119,3 @@ $[a,b] \subseteq [c,d]$ if and only if $c \leq a$ and $b \leq d$.
   \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Motivation]
-Interval arithmetic provides a framework for rigorous numerical computation
-with guaranteed error bounds. A real number $x \in [a,b]$ means the computed
-value may lie anywhere in the interval; operations propagate these bounds.
-\end{remark*}
-
-\begin{remark*}[Status]
-\textit{This section is a stub. A full treatment -- the sub-distributivity law,
-dependency problem, applications to root-finding, and connections to
-compactness -- will be developed in a future revision.}
-\end{remark*}

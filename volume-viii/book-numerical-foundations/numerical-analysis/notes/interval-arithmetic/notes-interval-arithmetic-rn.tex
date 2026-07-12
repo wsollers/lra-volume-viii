@@ -16,6 +16,16 @@ The \emph{box} (or \emph{interval vector}) determined by $(a,b)$ is
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named interval-arithmetic operation or relation by
+the formula stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The formula records how interval data are transformed while preserving the
+corresponding enclosure or containment meaning.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:cartesian-product]{Cartesian Product}
@@ -38,6 +48,16 @@ Equivalently (and most useful computationally),
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named interval-arithmetic operation or relation by
+the formula stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The formula records how interval data are transformed while preserving the
+corresponding enclosure or containment meaning.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:box]{Box / Product Interval}
@@ -59,6 +79,16 @@ For boxes, this closes in the class of boxes and satisfies the endpoint rule
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named interval-arithmetic operation or relation by
+the formula stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The formula records how interval data are transformed while preserving the
+corresponding enclosure or containment meaning.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:box]{Box / Product Interval}
@@ -78,6 +108,16 @@ Then
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named interval-arithmetic operation or relation by
+the formula stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The formula records how interval data are transformed while preserving the
+corresponding enclosure or containment meaning.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -104,6 +144,16 @@ where the inequalities are coordinatewise.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named interval-arithmetic operation or relation by
+the formula stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The formula records how interval data are transformed while preserving the
+corresponding enclosure or containment meaning.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:box]{Box / Product Interval}
@@ -128,15 +178,25 @@ S_i:=\{a_ic_i,\ a_id_i,\ b_ic_i,\ b_id_i\}.
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:box]{Box / Product Interval}
-  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
-  \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named interval-arithmetic operation or relation by
+the formula stated in the definition.
+\end{remark*}
 
-\begin{remark*}[Interpretation: intervals as guaranteed enclosures]
+\begin{remark*}[Interpretation]
+The formula records how interval data are transformed while preserving the
+corresponding enclosure or containment meaning.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Many applications also require quick bounds on a norm over a box.
+For example, if $0\le a\le b$ coordinatewise, then for every $x\in[a,b]$
+$0\le x\le b$ and hence $\|x\|_2\le \|b\|_2$. More generally, bounding norms over
+a box can be reduced to checking finitely many ``corners'' when the objective is
+coordinatewise monotone.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 A box $X=[a,b]\subseteq\mathbb{R}^n$ represents a \emph{set of possible vectors}
 (e.g., a computed vector plus uncertainty bounds). The operations above are
 \emph{set operations} (Minkowski sum/difference, scalar image), so the result is a
@@ -144,18 +204,17 @@ A box $X=[a,b]\subseteq\mathbb{R}^n$ represents a \emph{set of possible vectors}
 vector operation.
 \end{remark*}
 
-\begin{remark*}[Norm bounds and why boxes are convenient]
-Many applications also require quick bounds on a norm over a box.
-For example, if $0\le a\le b$ coordinatewise, then for every $x\in[a,b]$
-$0\le x\le b$ and hence $\|x\|_2\le \|b\|_2$. More generally, bounding norms over
-a box can be reduced to checking finitely many ``corners'' when the objective is
-coordinatewise monotone.
-\label{rem:norm-bounds}
-\end{remark*}
-
-\begin{remark*}[Status]
+\begin{remark*}[Exposition]
 \textit{This section is a stub. A full treatment -- interval extensions of general
 functions $f:\mathbb{R}^n\to\mathbb{R}^m$, the dependency problem, sub-distributivity,
 natural vs. centered (affine) forms, and connections to compactness and continuity --
 will be developed in a future revision.}
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:box]{Box / Product Interval}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}

@@ -20,13 +20,11 @@ This definition fixes the named kind of differential-equation object by the
 conditions stated in the definition.
 \end{remark*}
 
-\NoLocalDependencies
-
 \begin{remark*}[Interpretation]
 The general solution represents the full family of solutions produced by solving the differential equation. Initial conditions are then used to choose specific values of the arbitrary constants, producing a particular solution.
 \end{remark*}
 
-\begin{example*}[General Solution]
+\begin{remark*}[Examples]
 The differential equation
 \[
 y'=3y
@@ -43,9 +41,15 @@ is imposed, then $C=5$, and the particular solution is
 \[
 y(t)=5e^{3t}.
 \]
-\end{example*}
+\end{remark*}
 
-
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordinary-differential-equations-terminology-differential-equation]{Differential Equation}
+  \item \hyperref[def:ordinary-differential-equations-terminology-solution-of-a-differential-equation]{Solution of a Differential Equation}
+  \item \hyperref[def:ordinary-differential-equations-terminology-order-of-a-differential-equation]{Order of a Differential Equation}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Family of Solutions
@@ -73,13 +77,11 @@ This definition fixes the named kind of differential-equation object by the
 conditions stated in the definition.
 \end{remark*}
 
-\NoLocalDependencies
-
 \begin{remark*}[Interpretation]
 A family of solutions records many solutions at once. The parameters act as labels that distinguish one solution curve from another. When initial conditions are supplied, they usually determine the parameter values and select a single member of the family.
 \end{remark*}
 
-\begin{example*}[A Family of Solutions]
+\begin{remark*}[Examples]
 The differential equation
 \[
 y'=3y
@@ -89,8 +91,15 @@ has the family of solutions
 y(t)=Ce^{3t},
 \]
 where $C\in\mathbb{R}$. Each value of $C$ gives a different solution.
-\end{example*}
+\end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordinary-differential-equations-terminology-differential-equation]{Differential Equation}
+  \item \hyperref[def:ordinary-differential-equations-terminology-solution-of-a-differential-equation]{Solution of a Differential Equation}
+  \item \hyperref[def:function]{Function}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Initial Condition
@@ -114,8 +123,6 @@ This definition fixes the named kind of differential-equation object by the
 conditions stated in the definition.
 \end{remark*}
 
-\NoLocalDependencies
-
 \begin{remark*}[Interpretation]
 An initial condition selects one solution from a family of solutions. If a differential equation has general solution
 \[
@@ -128,7 +135,7 @@ y(t_0)=y_0
 is used to determine the constant $C$.
 \end{remark*}
 
-\begin{example*}[Initial Condition]
+\begin{remark*}[Examples]
 The differential equation
 \[
 y'=3y
@@ -149,8 +156,14 @@ Thus the particular solution satisfying the initial condition is
 \[
 y(t)=5e^{3t}.
 \]
-\end{example*}
+\end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:function-equality]{Function Equality}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Initial Value Problem
@@ -176,8 +189,6 @@ This definition fixes the named kind of differential-equation object by the
 conditions stated in the definition.
 \end{remark*}
 
-\NoLocalDependencies
-
 \begin{remark*}[Interpretation]
 An initial value problem asks for the particular solution of a differential equation that passes through a specified point. Geometrically, the condition
 \[
@@ -189,7 +200,7 @@ means that the solution curve must pass through the point
 \]
 \end{remark*}
 
-\begin{example*}[Initial Value Problem]
+\begin{remark*}[Examples]
 Consider the initial value problem
 \[
 y'=3y,
@@ -208,8 +219,14 @@ Therefore the solution of the initial value problem is
 \[
 y(t)=5e^{3t}.
 \]
-\end{example*}
+\end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordinary-differential-equations-terminology-differential-equation]{Differential Equation}
+  \item \hyperref[def:ordinary-differential-equations-solutions-initial-condition]{Initial Condition}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definitions --- Existence, Uniqueness, and Interval of Existence
@@ -242,7 +259,17 @@ This definition fixes the named kind of differential-equation object by the
 conditions stated in the definition.
 \end{remark*}
 
-\NoLocalDependencies
+\begin{remark*}[Interpretation]
+Existence records whether the initial value problem has at least one solution
+on an interval containing the initial point.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordinary-differential-equations-solutions-initial-value-problem]{Initial Value Problem}
+  \item \hyperref[def:ordinary-differential-equations-terminology-solution-of-a-differential-equation]{Solution of a Differential Equation}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition}
 \begin{definition}[Uniqueness]
@@ -268,7 +295,18 @@ This definition fixes the named kind of differential-equation object by the
 conditions stated in the definition.
 \end{remark*}
 
-\NoLocalDependencies
+\begin{remark*}[Interpretation]
+Uniqueness records whether the initial value problem has no more than one
+solution on the interval under consideration.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordinary-differential-equations-solutions-initial-value-problem]{Initial Value Problem}
+  \item \hyperref[def:ordinary-differential-equations-terminology-solution-of-a-differential-equation]{Solution of a Differential Equation}
+  \item \hyperref[def:function-equality]{Function Equality}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition}
 \begin{definition}[Interval of Existence]
@@ -297,13 +335,11 @@ This definition fixes the named kind of differential-equation object by the
 conditions stated in the definition.
 \end{remark*}
 
-\NoLocalDependencies
-
 \begin{remark*}[Interpretation]
 Existence asks whether at least one solution passes through the initial point. Uniqueness asks whether only one solution passes through that point. The interval of existence records how long the solution is valid.
 \end{remark*}
 
-\begin{example*}[Existence and Uniqueness]
+\begin{remark*}[Examples]
 The initial value problem
 \[
 y'=3y,
@@ -320,4 +356,12 @@ The interval of existence is
 \[
 (-\infty,\infty).
 \]
-\end{example*}
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordinary-differential-equations-solutions-initial-value-problem]{Initial Value Problem}
+  \item \hyperref[def:ordinary-differential-equations-terminology-solution-of-a-differential-equation]{Solution of a Differential Equation}
+  \item \hyperref[def:interval]{Interval}
+\end{itemize}
+\end{dependencies}

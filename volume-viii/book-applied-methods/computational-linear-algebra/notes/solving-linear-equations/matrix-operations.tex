@@ -50,14 +50,13 @@ as if the blocks were scalar entries, provided the block sizes are
 compatible.
 If $A = \begin{pmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{pmatrix}$
 and $B = \begin{pmatrix} B_{11} & B_{12} \\ B_{21} & B_{22} \end{pmatrix}$,
-then
+then, provided inner block dimensions match,
 \[
   AB = \begin{pmatrix}
     A_{11}B_{11} + A_{12}B_{21} & A_{11}B_{12} + A_{12}B_{22} \\
     A_{21}B_{11} + A_{22}B_{21} & A_{21}B_{12} + A_{22}B_{22}
   \end{pmatrix},
 \]
-provided inner block dimensions match.
 The standard matrix of a linear transformation $[T] = [T(\mathbf{e}_1) \mid T(\mathbf{e}_2) \mid \cdots \mid T(\mathbf{e}_n)]$
 is a block matrix with column vectors as blocks, and
 $[T]\mathbf{v} = v_1 T(\mathbf{e}_1) + \cdots + v_n T(\mathbf{e}_n)$

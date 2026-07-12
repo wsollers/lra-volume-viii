@@ -4,35 +4,33 @@
 
 \subsection*{IEEE 754 Floating-Point Formats}
 
-\providecommand{\IEEEFloatLayout}[8]{%
-\begin{center}
-\begin{tikzpicture}[x=#1 cm,y=0.8cm]
-    \pgfmathsetmacro{\SignEnd}{#2}
-    \pgfmathsetmacro{\ExpEnd}{#2 + #3}
-    \pgfmathsetmacro{\FracEnd}{#2 + #3 + #4}
-    \pgfmathtruncatemacro{\SignBitLabel}{#5 - 1}
-
-    \draw (0,0) rectangle (\SignEnd,1);
-    \draw (\SignEnd,0) rectangle (\ExpEnd,1);
-    \draw (\ExpEnd,0) rectangle (\FracEnd,1);
-
-    \node at ({\SignEnd/2},0.5) {\small $s$};
-    \node at ({(\SignEnd+\ExpEnd)/2},0.5) {\small exponent};
-    \node at ({(\ExpEnd+\FracEnd)/2},0.5) {\small fraction};
-
-    \node[above] at (0.5,1) {\scriptsize #5};
-    \node[above] at ({\SignEnd+0.5},1) {\scriptsize \SignBitLabel};
-    \node[above] at ({\ExpEnd-0.5},1) {\scriptsize #6};
-    \node[above] at ({\ExpEnd+0.5},1) {\scriptsize #7};
-    \node[above] at ({\FracEnd-0.5},1) {\scriptsize 0};
-\end{tikzpicture}
-\end{center}
-}
-
+\input{volume-viii/book-numerical-foundations/numerical-analysis/notes/ieee-floating-point/figures/figure-ieee-float-layout}
 
 % =========================================================
 % General structure
 % =========================================================
+
+\begin{definitionbox}{Definition - IEEE 754 Standard}
+\begin{definition}[IEEE 754 Standard]
+\label{def:numerical-analysis-ieee-754-standard}
+The \emph{IEEE 754 standard} is the standard convention used here for binary
+floating-point data, formats, special encodings, and finite-precision numerical
+arithmetic.
+\end{definition}
+
+\DefinitionalRoot
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+This definition fixes the local standard that governs the IEEE binary formats
+and encodings used in this section.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The standard is the organizing object. Concrete formats such as binary32 and
+binary64, and concrete encoding classes such as normal, subnormal, infinity,
+and NaN, are specializations governed by this standard.
+\end{remark*}
 
 \begin{definitionbox}{Definition - IEEE 754 Binary Floating-Point Datum}
 \begin{definition}[IEEE 754 Binary Floating-Point Datum]
@@ -48,19 +46,17 @@ three fields:
 
 Its interpretation depends on the exponent-field pattern and the fraction-field pattern.
 \end{definition}
-
-\NoLocalDependencies
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IEEEBinaryFloatDatum}(x)
+x=\mathsf{IEEEBinaryDatum}(s,e,f,F)
 \Longleftrightarrow
-\operatorname{HasSignField}(x)
+\operatorname{SignField}(x)=s
 \land
-\operatorname{HasExponentField}(x)
+\operatorname{ExponentField}(x)=e
 \land
-\operatorname{HasFractionField}(x).
+\operatorname{FractionField}(x)=f.
 \]
 \end{remark*}
 
@@ -69,6 +65,12 @@ IEEE 754 does not interpret a floating-point bit string as a plain binary intege
 Instead, the sign field determines sign, the exponent field determines scale and
 special cases, and the fraction field records the significant bits of the encoded value.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:numerical-analysis-ieee-754-standard]{IEEE 754 Standard}
+\end{itemize}
+\end{dependencies}
 
 % =========================================================
 % Normalized numbers
@@ -88,17 +90,15 @@ value is
 (-1)^s (1.f)_2 2^{e-\mathrm{bias}}.
 \]
 \end{definition}
-
-\NoLocalDependencies
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{NormalizedIEEEBinaryNumber}(x)
+\operatorname{HasIEEEClass}(x,F,\mathsf{IEEEEncodingClass}(\mathrm{normal}))
 \Longleftrightarrow
-\operatorname{IEEEBinaryFloatDatum}(x)
+x=\mathsf{IEEEBinaryDatum}(s,e,f,F)
 \land
-\operatorname{ExponentFieldNeitherAllZerosNorAllOnes}(x).
+0<\operatorname{ExponentField}(x)<2^{\operatorname{ExponentWidth}(F)}-1.
 \]
 \end{remark*}
 
@@ -107,6 +107,13 @@ In a normalized encoding, the leading binary digit of the significand is implici
 This hidden leading bit is what gives normalized numbers one more bit of effective
 precision than the stored fraction field alone.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:numerical-analysis-ieee-754-standard]{IEEE 754 Standard}
+  \item \hyperref[def:numerical-analysis-ieee-754-binary-floating-point-datum]{IEEE 754 Binary Floating-Point Datum}
+\end{itemize}
+\end{dependencies}
 
 % =========================================================
 % Subnormal numbers
@@ -125,19 +132,17 @@ then the represented value is
 (-1)^s (0.f)_2 2^{1-\mathrm{bias}}.
 \]
 \end{definition}
-
-\NoLocalDependencies
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{SubnormalIEEEBinaryNumber}(x)
+\operatorname{HasIEEEClass}(x,F,\mathsf{IEEEEncodingClass}(\mathrm{subnormal}))
 \Longleftrightarrow
-\operatorname{IEEEBinaryFloatDatum}(x)
+x=\mathsf{IEEEBinaryDatum}(s,e,f,F)
 \land
-\operatorname{ExponentFieldAllZeros}(x)
+\operatorname{ExponentField}(x)=0
 \land
-\neg \operatorname{FractionFieldAllZeros}(x).
+\operatorname{FractionField}(x)\ne 0.
 \]
 \end{remark*}
 
@@ -146,6 +151,13 @@ Subnormal numbers fill the gap between zero and the smallest positive normalized
 They preserve gradual underflow by allowing the leading significand bit to be $0$ instead
 of the implicit $1$ used for normalized numbers.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:numerical-analysis-ieee-754-standard]{IEEE 754 Standard}
+  \item \hyperref[def:numerical-analysis-ieee-754-binary-floating-point-datum]{IEEE 754 Binary Floating-Point Datum}
+\end{itemize}
+\end{dependencies}
 
 % =========================================================
 % Infinity
@@ -162,13 +174,13 @@ The sign bit determines whether the represented value is $+\infty$ or $-\infty$.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IEEEInfinityEncoding}(x)
+\operatorname{HasIEEEClass}(x,F,\mathsf{IEEEEncodingClass}(\mathrm{infinity}))
 \Longleftrightarrow
-\operatorname{IEEEBinaryFloatDatum}(x)
+x=\mathsf{IEEEBinaryDatum}(s,e,f,F)
 \land
-\operatorname{ExponentFieldAllOnes}(x)
+\operatorname{ExponentField}(x)=2^{\operatorname{ExponentWidth}(F)}-1
 \land
-\operatorname{FractionFieldAllZeros}(x).
+\operatorname{FractionField}(x)=0.
 \]
 \end{remark*}
 
@@ -178,15 +190,16 @@ limit-like arithmetic results. The sign field still matters, so IEEE 754 disting
 positive infinity from negative infinity.
 \end{remark*}
 
-% =========================================================
-% NaN
-% =========================================================
-
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:numerical-analysis-ieee-754-standard]{IEEE 754 Standard}
   \item \hyperref[def:numerical-analysis-ieee-754-binary-floating-point-datum]{IEEE 754 Binary Floating-Point Datum}
 \end{itemize}
 \end{dependencies}
+
+% =========================================================
+% NaN
+% =========================================================
 
 \begin{definitionbox}{Definition - IEEE 754 NaN Encoding}
 \begin{definition}[IEEE 754 NaN Encoding]
@@ -194,19 +207,17 @@ positive infinity from negative infinity.
 An IEEE 754 binary floating-point datum encodes \emph{NaN} (Not a Number) if its
 exponent field is all ones and its fraction field is not all zeros.
 \end{definition}
-
-\NoLocalDependencies
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IEEENaNEncoding}(x)
+\operatorname{HasIEEEClass}(x,F,\mathsf{IEEEEncodingClass}(\mathrm{nan}))
 \Longleftrightarrow
-\operatorname{IEEEBinaryFloatDatum}(x)
+x=\mathsf{IEEEBinaryDatum}(s,e,f,F)
 \land
-\operatorname{ExponentFieldAllOnes}(x)
+\operatorname{ExponentField}(x)=2^{\operatorname{ExponentWidth}(F)}-1
 \land
-\neg \operatorname{FractionFieldAllZeros}(x).
+\operatorname{FractionField}(x)\ne 0.
 \]
 \end{remark*}
 
@@ -215,6 +226,13 @@ A NaN encoding represents an undefined or invalid numerical result rather than a
 For example, NaNs arise from operations such as invalid indeterminate forms or from the
 propagation of an already invalid datum through later computations.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:numerical-analysis-ieee-754-standard]{IEEE 754 Standard}
+  \item \hyperref[def:numerical-analysis-ieee-754-binary-floating-point-datum]{IEEE 754 Binary Floating-Point Datum}
+\end{itemize}
+\end{dependencies}
 
 % =========================================================
 % Binary16
@@ -238,25 +256,12 @@ For a normalized finite binary16 datum, the represented value is
 (-1)^s (1.f)_2 2^{e-15}.
 \]
 \end{definition}
-
-\NoLocalDependencies
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Binary16}(x)
-\Longleftrightarrow
-\operatorname{IEEEBinaryFloatDatum}(x)
-\land
-\operatorname{BitWidth}(x,16)
-\land
-\operatorname{SignWidth}(x,1)
-\land
-\operatorname{ExponentWidth}(x,5)
-\land
-\operatorname{FractionWidth}(x,10)
-\land
-\operatorname{ExponentBias}(x,15).
+\mathsf{Binary16Format}
+=\mathsf{IEEEBinaryFormat}(16,1,5,10,15).
 \]
 \end{remark*}
 
@@ -265,9 +270,16 @@ Binary16 is commonly called \emph{half precision}. It is useful when reduced sto
 and bandwidth matter more than wide dynamic range or high precision.
 \end{remark*}
 
-\begin{remark*}[Bit layout]
+\begin{remark*}[Exposition]
 \IEEEFloatLayout{0.55}{1}{5}{10}{15}{10}{9}{binary16}
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:numerical-analysis-ieee-754-standard]{IEEE 754 Standard}
+  \item \hyperref[def:numerical-analysis-ieee-754-binary-floating-point-datum]{IEEE 754 Binary Floating-Point Datum}
+\end{itemize}
+\end{dependencies}
 
 % =========================================================
 % Binary32
@@ -291,25 +303,12 @@ For a normalized finite binary32 datum, the represented value is
 (-1)^s (1.f)_2 2^{e-127}.
 \]
 \end{definition}
-
-\NoLocalDependencies
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Binary32}(x)
-\Longleftrightarrow
-\operatorname{IEEEBinaryFloatDatum}(x)
-\land
-\operatorname{BitWidth}(x,32)
-\land
-\operatorname{SignWidth}(x,1)
-\land
-\operatorname{ExponentWidth}(x,8)
-\land
-\operatorname{FractionWidth}(x,23)
-\land
-\operatorname{ExponentBias}(x,127).
+\mathsf{Binary32Format}
+=\mathsf{IEEEBinaryFormat}(32,1,8,23,127).
 \]
 \end{remark*}
 
@@ -318,9 +317,16 @@ Binary32 is commonly called \emph{single precision}. It is the standard 32-bit f
 format used broadly in scientific computing, computer graphics, simulation, and machine learning.
 \end{remark*}
 
-\begin{remark*}[Bit layout]
+\begin{remark*}[Exposition]
 \IEEEFloatLayout{0.28}{1}{8}{23}{31}{23}{22}{binary32}
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:numerical-analysis-ieee-754-standard]{IEEE 754 Standard}
+  \item \hyperref[def:numerical-analysis-ieee-754-binary-floating-point-datum]{IEEE 754 Binary Floating-Point Datum}
+\end{itemize}
+\end{dependencies}
 
 % =========================================================
 % Binary64
@@ -344,25 +350,12 @@ For a normalized finite binary64 datum, the represented value is
 (-1)^s (1.f)_2 2^{e-1023}.
 \]
 \end{definition}
-
-\NoLocalDependencies
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Binary64}(x)
-\Longleftrightarrow
-\operatorname{IEEEBinaryFloatDatum}(x)
-\land
-\operatorname{BitWidth}(x,64)
-\land
-\operatorname{SignWidth}(x,1)
-\land
-\operatorname{ExponentWidth}(x,11)
-\land
-\operatorname{FractionWidth}(x,52)
-\land
-\operatorname{ExponentBias}(x,1023).
+\mathsf{Binary64Format}
+=\mathsf{IEEEBinaryFormat}(64,1,11,52,1023).
 \]
 \end{remark*}
 
@@ -371,9 +364,16 @@ Binary64 is commonly called \emph{double precision}. It is the standard high-pre
 floating-point format for much of scientific and engineering computation.
 \end{remark*}
 
-\begin{remark*}[Bit layout]
+\begin{remark*}[Exposition]
 \IEEEFloatLayout{0.14}{1}{11}{52}{63}{52}{51}{binary64}
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:numerical-analysis-ieee-754-standard]{IEEE 754 Standard}
+  \item \hyperref[def:numerical-analysis-ieee-754-binary-floating-point-datum]{IEEE 754 Binary Floating-Point Datum}
+\end{itemize}
+\end{dependencies}
 
 % =========================================================
 % Binary128
@@ -397,25 +397,12 @@ For a normalized finite binary128 datum, the represented value is
 (-1)^s (1.f)_2 2^{e-16383}.
 \]
 \end{definition}
-
-\NoLocalDependencies
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Binary128}(x)
-\Longleftrightarrow
-\operatorname{IEEEBinaryFloatDatum}(x)
-\land
-\operatorname{BitWidth}(x,128)
-\land
-\operatorname{SignWidth}(x,1)
-\land
-\operatorname{ExponentWidth}(x,15)
-\land
-\operatorname{FractionWidth}(x,112)
-\land
-\operatorname{ExponentBias}(x,16383).
+\mathsf{Binary128Format}
+=\mathsf{IEEEBinaryFormat}(128,1,15,112,16383).
 \]
 \end{remark*}
 
@@ -424,7 +411,7 @@ Binary128 is commonly called \emph{quadruple precision}. It provides substantial
 range and precision than binary64 at substantially greater storage and computational cost.
 \end{remark*}
 
-\begin{remark*}[Bit layout]
+\begin{remark*}[Exposition]
 \IEEEFloatLayout{0.08}{1}{15}{112}{127}{112}{111}{binary128}
 \end{remark*}
 
@@ -432,7 +419,7 @@ range and precision than binary64 at substantially greater storage and computati
 % Summary
 % =========================================================
 
-\begin{remark*}[Summary]
+\begin{remark*}[Exposition]
 The four standard IEEE 754 basic binary interchange formats considered here are:
 \[
 \text{binary16 }(1,5,10),\qquad
@@ -445,3 +432,10 @@ where each triple records
 (\text{sign bits},\text{ exponent bits},\text{ fraction bits}).
 \]
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:numerical-analysis-ieee-754-standard]{IEEE 754 Standard}
+  \item \hyperref[def:numerical-analysis-ieee-754-binary-floating-point-datum]{IEEE 754 Binary Floating-Point Datum}
+\end{itemize}
+\end{dependencies}

@@ -24,13 +24,11 @@ This definition fixes the named kind of differential-equation object by the
 conditions stated in the definition.
 \end{remark*}
 
-\NoLocalDependencies
-
 \begin{remark*}[Interpretation]
 At the computational level, a differential equation describes how a quantity changes. Instead of giving the function $y(t)$ directly, it gives a relation involving the rate of change of $y(t)$, and possibly higher-order rates of change.
 \end{remark*}
 
-\begin{example*}[A First Differential Equation]
+\begin{remark*}[Examples]
 The equation
 \[
 y'=3y
@@ -45,7 +43,15 @@ where $C$ is a constant. Indeed,
 \[
 y'(t)=3Ce^{3t}=3y(t).
 \]
-\end{example*}
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:function-equality]{Function Equality}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Order of a Differential Equation
@@ -69,9 +75,12 @@ This definition fixes the named kind of differential-equation object by the
 conditions stated in the definition.
 \end{remark*}
 
-\NoLocalDependencies
+\begin{remark*}[Interpretation]
+The order records the highest derivative that controls the type of differential
+equation being studied.
+\end{remark*}
 
-\begin{example*}[Orders of Differential Equations]
+\begin{remark*}[Examples]
 The equation
 \[
 y'=3y
@@ -89,7 +98,47 @@ The equation
 y^{(4)}-t y''+y=0
 \]
 is fourth order, since the highest derivative appearing is $y^{(4)}$.
-\end{example*}
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordinary-differential-equations-terminology-differential-equation]{Differential Equation}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+\end{itemize}
+\end{dependencies}
+
+% ---------------------------------------------------------
+% Definition --- First-Order Differential Equation
+% ---------------------------------------------------------
+
+\begin{definitionbox}{Definition}
+\begin{definition}[First-Order Differential Equation]
+\label{def:ordinary-differential-equations-terminology-first-order-differential-equation}
+A \textbf{first-order differential equation} is a differential equation whose
+order is one.
+
+Equivalently, it is a differential equation involving the first derivative of
+the unknown function but no derivative of higher order.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named differential-equation class by the order
+condition stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+First-order equations are the basic setting for many evolution models because
+they relate the current state of a quantity to its instantaneous rate of
+change.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordinary-differential-equations-terminology-differential-equation]{Differential Equation}
+  \item \hyperref[def:ordinary-differential-equations-terminology-order-of-a-differential-equation]{Order of a Differential Equation}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Solution of a Differential Equation
@@ -117,13 +166,11 @@ This definition fixes the named kind of differential-equation object by the
 conditions stated in the definition.
 \end{remark*}
 
-\NoLocalDependencies
-
 \begin{remark*}[Interpretation]
 A solution is not a number; it is a function. The function solves the differential equation when substituting the function and its derivatives into the equation makes the equation true for every point in the interval under consideration.
 \end{remark*}
 
-\begin{example*}[Checking a Solution]
+\begin{remark*}[Examples]
 The function
 \[
 y(t)=Ce^{3t}
@@ -137,9 +184,15 @@ on $\mathbb{R}$, because
 y'(t)=3Ce^{3t}=3y(t)
 \]
 for every $t\in\mathbb{R}$.
-\end{example*}
+\end{remark*}
 
-
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordinary-differential-equations-terminology-differential-equation]{Differential Equation}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:interval]{Interval}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Autonomous Differential Equation
@@ -163,13 +216,11 @@ This definition fixes the named kind of differential-equation object by the
 conditions stated in the definition.
 \end{remark*}
 
-\NoLocalDependencies
-
 \begin{remark*}[Interpretation]
 An autonomous differential equation describes a system whose rule of evolution does not change with time. If the system is in the same state $y$ at two different times, then the differential equation assigns the same rate of change at both times.
 \end{remark*}
 
-\begin{example*}[Autonomous Equations]
+\begin{remark*}[Examples]
 The equation
 \[
 y'=3y
@@ -181,8 +232,14 @@ The equation
 y'=t+y
 \]
 is not autonomous, since the independent variable $t$ appears explicitly.
-\end{example*}
+\end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordinary-differential-equations-terminology-first-order-differential-equation]{First-Order Differential Equation}
+  \item \hyperref[def:function]{Function}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Non-Autonomous Differential Equation
@@ -206,13 +263,11 @@ This definition fixes the named kind of differential-equation object by the
 conditions stated in the definition.
 \end{remark*}
 
-\NoLocalDependencies
-
 \begin{remark*}[Interpretation]
 A non-autonomous differential equation describes a system whose rule of evolution may change over time. Even if the system has the same state $y$ at two different times, the differential equation may assign different rates of change because the value of $t$ may be different.
 \end{remark*}
 
-\begin{example*}[Non-Autonomous Equations]
+\begin{remark*}[Examples]
 The equation
 \[
 y'=t+y
@@ -224,8 +279,14 @@ The equation
 y'=3y
 \]
 is autonomous, not non-autonomous, since the right-hand side depends only on $y$.
-\end{example*}
+\end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordinary-differential-equations-terminology-first-order-differential-equation]{First-Order Differential Equation}
+  \item \hyperref[def:function]{Function}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Linear Differential Equation
@@ -253,13 +314,11 @@ This definition fixes the named kind of differential-equation object by the
 conditions stated in the definition.
 \end{remark*}
 
-\NoLocalDependencies
-
 \begin{remark*}[Interpretation]
 Linearity means that the equation is linear in the unknown function $y$ and its derivatives. The coefficients may depend on $t$, but they may not depend on $y$ or its derivatives. Thus terms such as $y^2$, $yy'$, $\sin(y)$, and $(y')^2$ make an equation nonlinear.
 \end{remark*}
 
-\begin{example*}[Linear and Nonlinear Equations]
+\begin{remark*}[Examples]
 The equation
 \[
 y''+3t y'+2y=\sin t
@@ -277,4 +336,52 @@ The equation
 y'+yy'=t
 \]
 is nonlinear because it contains the product $yy'$.
-\end{example*}
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordinary-differential-equations-terminology-differential-equation]{Differential Equation}
+  \item \hyperref[def:linear-combination-of-real-valued-functions]{Linear Combination of Real-Valued Functions}
+  \item \hyperref[def:pointwise-scalar-multiple-of-a-function]{Pointwise Scalar Multiple of a Function}
+\end{itemize}
+\end{dependencies}
+
+% ---------------------------------------------------------
+% Definition --- Homogeneous Linear Differential Equation
+% ---------------------------------------------------------
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Homogeneous Linear Differential Equation]
+\label{def:ordinary-differential-equations-terminology-homogeneous-linear-differential-equation}
+A \textbf{homogeneous linear differential equation} is a linear differential
+equation whose forcing term is zero.
+
+For an $n$th-order linear ordinary differential equation
+\[
+a_n(t)y^{(n)}+a_{n-1}(t)y^{(n-1)}+\cdots+a_1(t)y'+a_0(t)y=g(t),
+\]
+homogeneity means that
+\[
+g(t)=0
+\]
+on the interval under consideration.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named differential-equation class by the zero forcing
+condition stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The homogeneous case records the intrinsic dynamics of the linear equation,
+without an external forcing term. Nonzero forcing terms produce nonhomogeneous
+linear differential equations.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordinary-differential-equations-terminology-linear-differential-equation]{Linear Differential Equation}
+  \item \hyperref[def:function-equality]{Function Equality}
+\end{itemize}
+\end{dependencies}
