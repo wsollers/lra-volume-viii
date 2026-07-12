@@ -4,15 +4,25 @@
 \section{IEEE 754 Floating-Point Formats}
 
 \begin{toolkitbox}{Toolkit --- Floating-Point Representation}
-This section develops the structural language of IEEE 754 binary floating-point
-representation. The key ideas are:
-
-\begin{itemize}
-    \item every binary floating-point datum is organized into sign, exponent, and fraction fields,
-    \item the exponent field determines whether the encoding is normalized, subnormal, zero, infinity, or NaN,
-    \item the fraction field determines the significant bits of the represented value,
-    \item each standard format is determined by its total bit width together with its exponent width, fraction width, and exponent bias.
-\end{itemize}
+\small
+\begin{tabular}{l p{0.62\linewidth}}
+\toprule
+\textbf{Name} & \textbf{Meaning} \\
+\midrule
+\hyperref[def:numerical-analysis-ieee-754-binary-floating-point-datum]{Binary floating-point datum} &
+Encoding organized into sign, exponent, and fraction fields. \\
+\hyperref[def:numerical-analysis-normalized-ieee-754-binary-number]{Normalized number} &
+Encoding with the standard normalized exponent/significand interpretation. \\
+\hyperref[def:numerical-analysis-subnormal-ieee-754-binary-number]{Subnormal number} &
+Encoding used near zero when the exponent field is all zeros. \\
+\hyperref[def:numerical-analysis-ieee-754-infinity-encoding]{Infinity encoding} &
+Encoding with all exponent bits set and a zero fraction field. \\
+\hyperref[def:numerical-analysis-ieee-754-nan-encoding]{NaN encoding} &
+Encoding with all exponent bits set and a nonzero fraction field. \\
+\hyperref[def:numerical-analysis-ieee-754-binary32-format]{Binary32 format} &
+Standard single-precision format determined by bit widths and exponent bias. \\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 \input{volume-viii/book-numerical-foundations/numerical-analysis/notes/ieee-floating-point/notes-ieee-floting-point}
