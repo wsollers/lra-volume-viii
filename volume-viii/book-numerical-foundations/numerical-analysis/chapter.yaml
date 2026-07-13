@@ -28,7 +28,7 @@ environments:
     file: notes\interval-arithmetic\notes-interval-arithmetic.tex
     display_title: Interval Containment
     proof_file: null
-  - label: def:box
+  - label: def:product-interval-box
     type: def
     file: notes\interval-arithmetic\notes-interval-arithmetic-rn.tex
     display_title: Box / Product Interval

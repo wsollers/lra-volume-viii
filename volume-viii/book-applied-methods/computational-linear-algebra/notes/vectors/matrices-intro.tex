@@ -8,7 +8,9 @@
 % ---------------------------------------------------------
 \subsection*{Matrices and Matrix--Vector Multiplication}
 
-\begin{propositionbox}{Definition (Matrix)}
+\begin{definitionbox}{Definition (Matrix)}
+\begin{definition}[Matrix]
+\label{def:matrix-array}
 An $m \times n$ \emph{matrix} $A$ is a rectangular array of real numbers with
 $m$ rows and $n$ columns:
 The entry in row $i$, column $j$ is denoted $A_{ij}$ or $[A]_{ij}$, and
@@ -21,9 +23,23 @@ we write $A \in \mathbb{R}^{m \times n}$.
     A_{m1} & A_{m2} & \cdots & A_{mn}
   \end{pmatrix}.
 \]
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
 
-\begin{propositionbox}{Definition (Matrix--Vector and Matrix--Matrix Multiplication)}
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{definitionbox}{Definition (Matrix--Vector and Matrix--Matrix Multiplication)}
+\begin{definition}[Matrix--Vector and Matrix--Matrix Multiplication]
+\label{def:matrix-vector-matrix-multiplication}
 If $A \in \mathbb{R}^{m \times n}$ and $\mathbf{x} \in \mathbb{R}^n$, then
 $A\mathbf{x} \in \mathbb{R}^m$ is defined by
 \[
@@ -39,9 +55,22 @@ $AB \in \mathbb{R}^{m \times p}$ has entries
 \[
   (AB)_{ij} = \sum_{k=1}^n A_{ik} B_{kj}.
 \]
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
 
-\begin{remark*}[Matrix multiplication is not commutative]
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{remark*}[Exposition]
+\textbf{Matrix multiplication is not commutative.}
 In general $AB \neq BA$, even when both products are defined.
 Order matters: applying transformation $B$ first, then $A$, is written $AB$.
 \end{remark*}
@@ -49,7 +78,9 @@ Order matters: applying transformation $B$ first, then $A$, is written $AB$.
 % ---------------------------------------------------------
 \subsection*{The Transpose}
 
-\begin{propositionbox}{Definition (Transpose)}
+\begin{definitionbox}{Definition (Transpose)}
+\begin{definition}[Transpose]
+\label{def:matrix-transpose}
 The \emph{transpose} of $A \in \mathbb{R}^{m \times n}$ is the matrix
 $A^T \in \mathbb{R}^{n \times m}$ defined by $(A^T)_{ij} = A_{ji}$.
 Rows of $A$ become columns of $A^T$.
@@ -59,12 +90,25 @@ Key properties:
   \item $(AB)^T = B^T A^T$
   \item $\mathbf{v} \cdot \mathbf{w} = \mathbf{v}^T \mathbf{w}$ (dot product as matrix multiplication)
 \end{itemize}
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
 
 % ---------------------------------------------------------
 \subsection*{Matrix Form of a Curve}
 
-\begin{remark*}[NURBS connection: matrix form of curves and surfaces]
+\begin{remark*}[Exposition]
+\textbf{NURBS connection: matrix form of curves and surfaces.}
 The power basis curve $C(u) = \sum_{i=0}^n \mathbf{a}_i u^i$ can be written as
 \[
   C(u) = [\mathbf{a}_0 \;\; \mathbf{a}_1 \;\; \cdots \;\; \mathbf{a}_n]

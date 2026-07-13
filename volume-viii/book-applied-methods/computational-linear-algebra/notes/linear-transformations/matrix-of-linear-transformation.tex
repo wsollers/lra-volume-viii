@@ -8,7 +8,8 @@
 % ---------------------------------------------------------
 \subsection*{The Standard Matrix}
 
-\begin{theorembox}{Theorem (Standard Matrix of a Linear Transformation)}
+\begin{remark*}[Exposition]
+\textbf{Standard Matrix of a Linear Transformation.}
 A function $T : \mathbb{R}^n \to \mathbb{R}^m$ is a linear transformation if and only if
 there exists a unique matrix $[T] \in \mathbb{R}^{m \times n}$ such that
 \[
@@ -19,9 +20,10 @@ the standard basis vectors as columns:
 \[
   [T] = \bigl[\, T(\mathbf{e}_1) \;\mid\; T(\mathbf{e}_2) \;\mid\; \cdots \;\mid\; T(\mathbf{e}_n) \,\bigr].
 \]
-\end{theorembox}
+\end{remark*}
 
-\begin{remark*}[Why this works]
+\begin{remark*}[Exposition]
+\textbf{Why this works.}
 Since every $\mathbf{v} = v_1\mathbf{e}_1 + \cdots + v_n\mathbf{e}_n$,
 linearity gives
 \[
@@ -33,7 +35,9 @@ Knowing $T$ on the basis vectors determines $T$ on the entire space.
 % ---------------------------------------------------------
 \subsection*{Matrix Under Change of Basis}
 
-\begin{propositionbox}{Definition (Matrix Relative to a Basis)}
+\begin{definitionbox}{Definition (Matrix Relative to a Basis)}
+\begin{definition}[Matrix Relative to a Basis]
+\label{def:matrix-relative-to-basis}
 Let $T : \mathbb{R}^n \to \mathbb{R}^n$ be a linear transformation and let
 $\mathcal{B} = \{\mathbf{b}_1, \ldots, \mathbf{b}_n\}$ be an ordered basis.
 The \emph{matrix of $T$ relative to $\mathcal{B}$}, denoted $[T]_\mathcal{B}$,
@@ -46,9 +50,22 @@ expressed in the standard basis, then
   [T]_\mathcal{B} = P^{-1} [T] P.
 \]
 Two matrices related by $B = P^{-1}AP$ are called \emph{similar}.
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
 
-\begin{remark*}[NURBS connection: B\'{e}zier curve in matrix form]
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{remark*}[Exposition]
+\textbf{NURBS connection: B\'{e}zier curve in matrix form.}
 The B\'{e}zier curve has the matrix representation
 \[
   C(u) = [u^i]^T M [P_i],

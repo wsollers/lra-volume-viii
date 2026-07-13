@@ -8,7 +8,9 @@
 % ---------------------------------------------------------
 \subsection*{Vectors}
 
-\begin{propositionbox}{Definition (Vector in $\mathbb{R}^n$)}
+\begin{definitionbox}{Definition (Vector in $\mathbb{R}^n$)}
+\begin{definition}[Vector in $\mathbb{R}^n$]
+\label{def:vector-rn}
 A \emph{vector} in $\mathbb{R}^n$ is an ordered list of $n$ real numbers,
 written $\mathbf{v} = (v_1, v_2, \ldots, v_n)$.
 The number $n$ is the \emph{dimension} of the vector.
@@ -22,9 +24,22 @@ The number $n$ is the \emph{dimension} of the vector.
 \[
   c\mathbf{v} = (cv_1,\; cv_2,\; \ldots,\; cv_n), \quad c \in \mathbb{R}.
 \]
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
 
-\begin{remark*}[Geometric meaning]
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{remark*}[Exposition]
+\textbf{Geometric meaning.}
 In $\mathbb{R}^2$ and $\mathbb{R}^3$, a vector is an arrow indicating displacement.
 Its entries specify length and direction, but \emph{not} location ---
 the same vector can be placed anywhere in space.
@@ -32,7 +47,8 @@ Addition corresponds to following one displacement and then another (head-to-tai
 Scalar multiplication stretches or shrinks the arrow; negative scalars reverse its direction.
 \end{remark*}
 
-\begin{theorembox}{Theorem (Properties of Vector Operations)}
+\begin{remark*}[Exposition]
+\textbf{Properties of Vector Operations.}
 For all $\mathbf{v}, \mathbf{w}, \mathbf{x} \in \mathbb{R}^n$ and $c, d \in \mathbb{R}$:
 \begin{enumerate}
   \item $\mathbf{v} + \mathbf{w} = \mathbf{w} + \mathbf{v}$ \hfill (commutativity)
@@ -41,12 +57,14 @@ For all $\mathbf{v}, \mathbf{w}, \mathbf{x} \in \mathbb{R}^n$ and $c, d \in \mat
   \item $(c + d)\mathbf{v} = c\mathbf{v} + d\mathbf{v}$ \hfill (distributivity over scalar addition)
   \item $c(d\mathbf{v}) = (cd)\mathbf{v}$ \hfill (compatibility)
 \end{enumerate}
-\end{theorembox}
+\end{remark*}
 
 % ---------------------------------------------------------
 \subsection*{Linear Combinations}
 
-\begin{propositionbox}{Definition (Linear Combination)}
+\begin{definitionbox}{Definition (Linear Combination)}
+\begin{definition}[Linear Combination]
+\label{def:linear-combination}
 A \emph{linear combination} of vectors $\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_k \in \mathbb{R}^n$
 is any vector of the form
 \[
@@ -56,9 +74,22 @@ where $c_1, c_2, \ldots, c_k \in \mathbb{R}$ are called the \emph{coefficients}.
 
 A \emph{convex combination} is a linear combination in which $c_i \geq 0$
 for all $i$ and $\sum_{i=1}^k c_i = 1$.
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
 
-\begin{remark*}[Why convex combinations matter for NURBS]
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{remark*}[Exposition]
+\textbf{Why convex combinations matter for NURBS.}
 Every point on a B\'{e}zier or B-spline curve is a convex combination of control points.
 The Bernstein basis functions $B_{i,n}(u)$ are non-negative and sum to 1,
 so $C(u) = \sum_{i=0}^n B_{i,n}(u) P_i$ is a convex combination of the control
@@ -67,11 +98,25 @@ This is the \emph{convex hull property}: the curve lies entirely within the conv
 of its control polygon.
 \end{remark*}
 
-\begin{propositionbox}{Definition (Standard Basis Vectors)}
+\begin{definitionbox}{Definition (Standard Basis Vectors)}
+\begin{definition}[Standard Basis Vectors]
+\label{def:standard-basis-vectors}
 For $j = 1, 2, \ldots, n$, the \emph{$j$-th standard basis vector} $\mathbf{e}_j \in \mathbb{R}^n$
 has a $1$ in position $j$ and $0$s everywhere else.
 Every vector $\mathbf{v} = (v_1, \ldots, v_n) \in \mathbb{R}^n$ can be written as
 \[
   \mathbf{v} = v_1 \mathbf{e}_1 + v_2 \mathbf{e}_2 + \cdots + v_n \mathbf{e}_n.
 \]
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot

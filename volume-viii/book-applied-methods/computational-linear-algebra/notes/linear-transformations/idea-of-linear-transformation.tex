@@ -8,7 +8,9 @@
 % ---------------------------------------------------------
 \subsection*{Definition}
 
-\begin{propositionbox}{Definition (Linear Transformation)}
+\begin{definitionbox}{Definition (Linear Transformation)}
+\begin{definition}[Linear Transformation]
+\label{def:linear-transformation}
 A function $T : \mathbb{R}^n \to \mathbb{R}^m$ is a \emph{linear transformation} if
 \[
   T(c\mathbf{v} + d\mathbf{w}) = cT(\mathbf{v}) + dT(\mathbf{w})
@@ -20,9 +22,22 @@ Equivalently, $T$ must satisfy both:
   \item $T(\mathbf{v} + \mathbf{w}) = T(\mathbf{v}) + T(\mathbf{w})$ \quad (preserves addition), and
   \item $T(c\mathbf{v}) = cT(\mathbf{v})$ \quad (preserves scalar multiplication).
 \end{enumerate}
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
 
-\begin{remark*}[The origin is always fixed]
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{remark*}[Exposition]
+\textbf{The origin is always fixed.}
 Every linear transformation satisfies $T(\mathbf{0}) = \mathbf{0}$.
 Therefore, \emph{translation} (shifting by a nonzero vector) is not linear.
 The four geometric operations that \emph{are} linear: rotation about the origin,
@@ -44,7 +59,8 @@ scaling, reflection, and projection.
 \end{tabular}
 \end{tcolorbox}
 
-\begin{remark*}[Composition is matrix multiplication]
+\begin{remark*}[Exposition]
+\textbf{Composition is matrix multiplication.}
 Applying $T_1$ then $T_2$ has matrix $[T_2][T_1]$.
 A sequence of geometric operations on a model (scale, then rotate, then translate)
 corresponds to multiplying their matrices together in that order.
@@ -53,7 +69,9 @@ corresponds to multiplying their matrices together in that order.
 % ---------------------------------------------------------
 \subsection*{Affine Transformations}
 
-\begin{propositionbox}{Definition (Affine Transformation)}
+\begin{definitionbox}{Definition (Affine Transformation)}
+\begin{definition}[Affine Transformation]
+\label{def:affine-transformation}
 An \emph{affine transformation} $\Phi : \mathbb{R}^n \to \mathbb{R}^n$ has the form
 \[
   \Phi(\mathbf{r}) = A\mathbf{r} + \mathbf{v},
@@ -61,9 +79,22 @@ An \emph{affine transformation} $\Phi : \mathbb{R}^n \to \mathbb{R}^n$ has the f
 where $A \in \mathbb{R}^{n \times n}$ is the linear part and $\mathbf{v} \in \mathbb{R}^n$
 is a translation vector.
 An affine transformation is a linear transformation when $\mathbf{v} = \mathbf{0}$.
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
 
-\begin{remark*}[Affine invariance of B-spline curves --- NURBS Property P3.4]
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{remark*}[Exposition]
+\textbf{Affine invariance of B-spline curves --- NURBS Property P3.4.}
 An affine transformation $\Phi(\mathbf{r}) = A\mathbf{r} + \mathbf{v}$ applied to
 a B-spline curve $C(u) = \sum_{i=0}^n N_{i,p}(u) P_i$ gives
 \[

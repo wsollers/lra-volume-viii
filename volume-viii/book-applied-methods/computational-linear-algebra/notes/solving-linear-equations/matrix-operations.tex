@@ -8,7 +8,8 @@
 % ---------------------------------------------------------
 \subsection*{Algebraic Rules}
 
-\begin{theorembox}{Theorem (Rules for Matrix Multiplication)}
+\begin{remark*}[Exposition]
+\textbf{Rules for Matrix Multiplication.}
 When the dimensions are compatible:
 \begin{enumerate}
   \item $A(BC) = (AB)C$ \hfill (associativity)
@@ -23,12 +24,14 @@ The following do \textbf{not} hold in general:
   \item $AB = AC \not\Rightarrow B = C$ (no cancellation in general)
   \item $AB = 0 \not\Rightarrow A = 0$ or $B = 0$
 \end{itemize}
-\end{theorembox}
+\end{remark*}
 
 % ---------------------------------------------------------
 \subsection*{Diagonal Matrices}
 
-\begin{propositionbox}{Definition (Diagonal Matrix)}
+\begin{definitionbox}{Definition (Diagonal Matrix)}
+\begin{definition}[Diagonal Matrix]
+\label{def:diagonal-matrix}
 A \emph{diagonal matrix} $D \in \mathbb{R}^{n \times n}$ has $D_{ij} = 0$
 for all $i \neq j$.
 Written $D = \operatorname{diag}(d_1, d_2, \ldots, d_n)$.
@@ -39,12 +42,25 @@ Key computational facts:
   \item $AD$ multiplies each \emph{column} $j$ of $A$ by $d_j$.
   \item $D_1 D_2 = \operatorname{diag}(d_1 e_1, \ldots, d_n e_n)$ where $e_j$ are the diagonal entries of $D_2$.
 \end{itemize}
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
 
 % ---------------------------------------------------------
 \subsection*{Block Matrices}
 
-\begin{remark*}[Block matrix multiplication]
+\begin{remark*}[Exposition]
+\textbf{Block matrix multiplication.}
 Matrices can be partitioned into blocks, and multiplied block-by-block
 as if the blocks were scalar entries, provided the block sizes are
 compatible.

@@ -8,7 +8,9 @@
 % ---------------------------------------------------------
 \subsection*{Definition and Properties}
 
-\begin{propositionbox}{Definition (Invertible Matrix)}
+\begin{definitionbox}{Definition (Invertible Matrix)}
+\begin{definition}[Invertible Matrix]
+\label{def:invertible-matrix}
 A square matrix $A \in \mathbb{R}^{n \times n}$ is \emph{invertible}
 (or \emph{nonsingular}) if there exists a matrix $A^{-1} \in \mathbb{R}^{n \times n}$
 such that
@@ -17,9 +19,22 @@ such that
 \]
 The matrix $A^{-1}$ is the \emph{inverse} of $A$ and is unique.
 A matrix with no inverse is called \emph{singular}.
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
 
-\begin{theorembox}{Theorem (Properties of Inverses)}
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{remark*}[Exposition]
+\textbf{Properties of Inverses.}
 When $A$ and $B$ are invertible $n \times n$ matrices:
 \begin{enumerate}
   \item $(A^{-1})^{-1} = A$
@@ -27,7 +42,7 @@ When $A$ and $B$ are invertible $n \times n$ matrices:
   \item $(A^T)^{-1} = (A^{-1})^T$
   \item $(cA)^{-1} = \tfrac{1}{c} A^{-1}$ for $c \neq 0$
 \end{enumerate}
-\end{theorembox}
+\end{remark*}
 
 % ---------------------------------------------------------
 \subsection*{\texorpdfstring{The $2 \times 2$ Case}{The 2 x 2 Case}}
@@ -47,7 +62,8 @@ The quantity $ad - bc$ is the determinant. The matrix is singular when $ad = bc$
 % ---------------------------------------------------------
 \subsection*{Change of Basis via Inverse}
 
-\begin{remark*}[NURBS connection: converting between Bernstein and power basis]
+\begin{remark*}[Exposition]
+\textbf{NURBS connection: converting between Bernstein and power basis.}
 In Piegl \& Tiller Exercise 1.14, the Bernstein basis functions of degree $n$
 can be written as $[B_{0,n}(u), \ldots, B_{n,n}(u)] = [1, u, \ldots, u^n] M$,
 where $M$ is an $(n+1) \times (n+1)$ matrix.

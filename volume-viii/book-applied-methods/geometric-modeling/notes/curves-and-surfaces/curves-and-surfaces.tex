@@ -11,7 +11,9 @@
 % ---------------------------------------------------------
 \subsection*{Parametric Curves}
 
-\begin{propositionbox}{Definition (Parametric Curve)}
+\begin{definitionbox}{Definition (Parametric Curve)}
+\begin{definition}[Parametric Curve]
+\label{def:parametric-curve}
 A \emph{parametric curve} in $\mathbb{R}^n$ is a vector-valued function
 \[
   C\,:\,[a,b]\;\to\;\mathbb{R}^n, \qquad
@@ -20,9 +22,23 @@ A \emph{parametric curve} in $\mathbb{R}^n$ is a vector-valued function
 where each coordinate function $x_i(u)$ is a real-valued function
 of the scalar parameter $u$.
 The interval $[a,b]$ is typically normalised to $[0,1]$.
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
 
-\begin{propositionbox}{Definition (Velocity, Regularity, Unit Tangent)}
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{definitionbox}{Definition (Velocity, Regularity, Unit Tangent)}
+\begin{definition}[Velocity, Regularity, Unit Tangent]
+\label{def:velocity-regularity-unit-tangent}
 The \emph{velocity vector} (or \emph{tangent vector}) at $u$ is the derivative
 \[
   C'(u) = \bigl(x_1'(u),\,x_2'(u),\,\ldots,\,x_n'(u)\bigr).
@@ -33,9 +49,22 @@ At a regular point, the \emph{unit tangent vector} is
   \hat{T}(u) = \frac{C'(u)}{\|C'(u)\|}.
 \]
 The scalar $\|C'(u)\|$ is the \emph{speed} of traversal.
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
 
-\begin{remark*}[Properties of parametric curves]
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{remark*}[Exposition]
+\textbf{Properties of parametric curves.}
 Parametric curves carry structure that implicit curves do not:
 \begin{itemize}
   \item \textbf{Direction.}
@@ -63,7 +92,9 @@ Parametric curves carry structure that implicit curves do not:
 % ---------------------------------------------------------
 \subsection*{Parametric Surfaces}
 
-\begin{propositionbox}{Definition (Parametric Surface)}
+\begin{definitionbox}{Definition (Parametric Surface)}
+\begin{definition}[Parametric Surface]
+\label{def:parametric-surface}
 A \emph{parametric surface} in $\mathbb{R}^3$ is a vector-valued function
 of two parameters,
 \[
@@ -72,12 +103,26 @@ of two parameters,
 \]
 where $R\subseteq\mathbb{R}^2$ is the \emph{parameter domain}
 (typically the unit square $[0,1]^2$).
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
 
 % ---------------------------------------------------------
 \subsection*{Partial Derivatives and Isoparametric Curves}
 
-\begin{propositionbox}{Definition (Partial Derivative Vectors)}
+\begin{definitionbox}{Definition (Partial Derivative Vectors)}
+\begin{definition}[Partial Derivative Vectors]
+\label{def:partial-derivative-vectors}
 The \emph{partial derivative vectors} of $S$ at $(u,v)$ are
 \[
   S_u(u,v) = \frac{\partial S}{\partial u}
@@ -93,9 +138,23 @@ The \emph{partial derivative vectors} of $S$ at $(u,v)$ are
 $S_u$ is the tangent vector to the surface in the $u$-direction:
 it is the velocity of the curve obtained by fixing $v$ and varying $u$.
 $S_v$ is the corresponding tangent vector in the $v$-direction.
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
 
-\begin{propositionbox}{Definition (Isoparametric Curves)}
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{definitionbox}{Definition (Isoparametric Curves)}
+\begin{definition}[Isoparametric Curves]
+\label{def:isoparametric-curves}
 Fixing one parameter on $S(u,v)$ produces a curve on the surface:
 \begin{itemize}
   \item \emph{$u$-curve} at $v = v_0$:\quad
@@ -106,12 +165,26 @@ Fixing one parameter on $S(u,v)$ produces a curve on the surface:
 These \emph{isoparametric curves} (isocurves) sweep the surface and
 form its parameter grid.
 The two families intersect at every surface point $S(u_0,v_0)$.
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
 
 % ---------------------------------------------------------
 \subsection*{Directional Derivative}
 
-\begin{propositionbox}{Definition (Directional Derivative on a Surface)}
+\begin{definitionbox}{Definition (Directional Derivative on a Surface)}
+\begin{definition}[Directional Derivative on a Surface]
+\label{def:directional-derivative-surface}
 The \emph{directional derivative} of $S$ at $(u_0,v_0)$ in the
 direction $\mathbf{d} = (d_u, d_v)$ (a unit vector in parameter space) is
 \[
@@ -121,12 +194,26 @@ It measures the rate of change of position on the surface as the
 parameter moves in direction $\mathbf{d}$ in the $uv$-plane.
 Every tangent vector to the surface at $(u_0,v_0)$ is a directional
 derivative for some choice of $\mathbf{d}$.
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
 
 % ---------------------------------------------------------
 \subsection*{Unit Normal and Tangent Plane}
 
-\begin{propositionbox}{Definition (Regularity, Unit Normal, Tangent Plane)}
+\begin{definitionbox}{Definition (Regularity, Unit Normal, Tangent Plane)}
+\begin{definition}[Regularity, Unit Normal, Tangent Plane]
+\label{def:regularity-unit-normal-tangent-plane}
 The surface is \emph{regular} at $(u_0,v_0)$ if
 $S_u \times S_v \neq \mathbf{0}$ there.
 
@@ -147,9 +234,22 @@ Its equation in terms of position $\mathbf{p}$ is
 \[
   N\cdot\bigl(\mathbf{p} - S(u_0,v_0)\bigr) = 0.
 \]
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+This definition fixes the named object, operation, or relation by the formula
+or conditions stated in the definition.
+\end{remark*}
 
-\begin{remark*}[Geometric meaning of $S_u \times S_v$]
+\begin{remark*}[Interpretation]
+The statement records the local meaning of the named concept used by the
+surrounding computational or geometric construction.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{remark*}[Exposition]
+\textbf{Geometric meaning of $S_u \times S_v$.}
 The magnitude $\|S_u \times S_v\|$ equals the area of the
 parallelogram spanned by $S_u$ and $S_v$, which is the
 \emph{local area element} of the surface.
