@@ -122,3 +122,6 @@ desktop.ini
 *.pdf
 common/
 .claude/
+
+# Local Google Drive upload scratch directories
+**/.tmp.driveupload/
