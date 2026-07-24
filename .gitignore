@@ -125,3 +125,5 @@ common/
 
 # Local Google Drive upload scratch directories
 **/.tmp.driveupload/
+
+.codex-remote-attachments/
