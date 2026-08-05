@@ -1,0 +1,61 @@
+{
+  "name": "LRA Volume TeX",
+  "build": {
+    "dockerfile": "../../lra-governance/docker/lra-tex-dev/Dockerfile",
+    "context": "../../lra-governance/docker/lra-tex-dev"
+  },
+  "remoteEnv": {
+    "LRA_GOVERNANCE_ROOT": "/lra-governance",
+    "LRA_COMMON_ROOT": "/lra-common",
+    "LRA_EDITION": "digital",
+    "LRA_PAPER": "letter"
+  },
+  "containerEnv": {
+    "LRA_GOVERNANCE_ROOT": "/lra-governance",
+    "LRA_COMMON_ROOT": "/lra-common",
+    "LRA_EDITION": "digital",
+    "LRA_PAPER": "letter"
+  },
+  "mounts": [
+    "source=F:/repos/lra-governance,target=/lra-governance,type=bind,readonly",
+    "source=F:/repos/lra-common,target=/lra-common,type=bind,readonly",
+    "source=F:/repos/lra-common/common,target=${containerWorkspaceFolder}/common,type=bind,readonly"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop"
+      ],
+      "settings": {
+        "latex-workshop.latex.autoBuild.run": "never",
+        "latex-workshop.latex.build.enableMagicComments": true,
+        "latex-workshop.latex.outDir": "build",
+        "latex-workshop.latex.recipe.default": "latexmk (lualatex)",
+        "latex-workshop.latex.tools": [
+          {
+            "name": "latexmk-lualatex",
+            "command": "latexmk",
+            "args": [
+              "-lualatex",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "-synctex=1",
+              "-shell-escape",
+              "%DOC%"
+            ]
+          }
+        ],
+        "latex-workshop.latex.recipes": [
+          {
+            "name": "latexmk (lualatex)",
+            "tools": [
+              "latexmk-lualatex"
+            ]
+          }
+        ],
+        "latex-workshop.view.pdf.viewer": "tab",
+        "latex-workshop.synctex.afterBuild.enabled": true
+      }
+    }
+  }
+}
