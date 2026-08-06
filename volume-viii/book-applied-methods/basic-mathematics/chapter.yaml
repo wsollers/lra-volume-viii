@@ -1,0 +1,24 @@
+subject: basic-mathematics
+display_title: "Basic Mathematics"
+volume: volume-viii
+book: book-applied-methods
+path: volume-viii/book-applied-methods/basic-mathematics
+status: planned
+sections:
+  - subject: algebra-and-number
+    display_title: "Algebra and Number"
+  - subject: synthetic-euclidean-geometry
+    display_title: "Synthetic Euclidean Geometry"
+  - subject: functions-and-graphs
+    display_title: "Functions and Graphs"
+  - subject: coordinate-and-vector-geometry
+    display_title: "Coordinate and Vector Geometry"
+  - subject: trigonometry
+    display_title: "Trigonometry"
+  - subject: analytic-geometry
+    display_title: "Analytic Geometry"
+  - subject: linear-methods
+    display_title: "Linear Methods"
+dependencies:
+  prior: 
+  next: computational-calculus
