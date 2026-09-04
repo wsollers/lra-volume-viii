@@ -1,4 +1,6 @@
-# LRA standard ignore rules
+# LRA shared ignore policy
+# Copy this file for each new governed repository. Keep repository-specific
+# patterns below the shared policy section in that repository's .gitignore.
 
 # LaTeX intermediate files
 *.aux
@@ -27,6 +29,7 @@ build/
 build-*/
 out/
 dist/
+.generated/
 
 # Python
 __pycache__/
@@ -76,7 +79,7 @@ cmake-build-*/
 .lake/
 lean/.lake/
 
-# Generated explorer and reports
+# Generated reports and local process output
 **/.explorer/
 baselines/
 migration-reports/
@@ -86,17 +89,17 @@ reports/
 runs/extraction-*/
 logs/extraction-log-*.log
 logs/extraction-report-*.md
-nurbs_dde/captures/
-nurbs_dde/telemetry/
 
 # Local temp/cache output
 .cache/
+.test-tmp/
 tmp/
 temp/
 *.tmp
 *.bak
 *.zip
 .tmp.driveupload/
+**/.tmp.driveupload/
 
 # IDE / editor
 .vscode/
@@ -120,10 +123,12 @@ desktop.ini
 # Local source PDFs
 # These may include personally purchased or otherwise non-redistributable files.
 *.pdf
-common/
+
+# Local agent state and attachments
 .claude/
-
-# Local Google Drive upload scratch directories
-**/.tmp.driveupload/
-
 .codex-remote-attachments/
+
+# Repository-specific ignore rules
+nurbs_dde/captures/
+nurbs_dde/telemetry/
+common/
